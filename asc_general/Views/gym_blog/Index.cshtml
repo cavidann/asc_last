@@ -1,0 +1,67 @@
+﻿@using asc_general.Models
+@model dynamic
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section cizgiCss{
+    <link rel="stylesheet" href="~/Public/css/cizgi.css">
+}
+<div class="wrapper">
+    <!--pepe content starts-->
+
+    <div id="main">
+        <!--breadcrumb-section starts-->
+        <div class="breadcrumb-section">
+            <div class="container">
+                <h1>@Model.gym_blog.title</h1>
+                <div class="breadcrumb">
+                    <a href="@Url.Action("index","home")" class="dark-purple">Home</a>
+                    <span class="fa fa-angle-double-right"></span>
+                    <span class="current dark-purple">@Model.gym_blog.title</span>
+                </div>
+            </div>
+        </div>
+        <!--breadcrumb-section ends-->
+        <!--container starts-->
+        <div class="kidsbg">
+            <div class="container">
+                <!--primary starts-->
+                <section id="primary" class="content-full-width">
+
+                    <div class="column dt-sc-one-half first">
+                        <article class="blog-entry">
+                            <div class="blog-entry-inner">
+                                <div class="entry-thumb">
+                                    <a href="#"><img src="~/Uploads/@Model.gym_blog.photo" alt="" title=""></a>
+                                </div>
+                                <div class="entry-details">
+                                    <div class="entry-title">
+                                        <h3><a href="#" class="dark-purple">@Model.gym_blog.title </a></h3>
+                                    </div>
+                                    <!--entry-metadata ends-->
+                                    <div class="entry-body">
+                                        <p>
+                                            @Model.cartoon_blog.text
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <iframe width="560" height="315" src="@Model.gym_blog.video_url"
+                            class="pepemargin" frameborder="0" allowfullscreen></iframe>
+
+
+                </section>
+                <!--primary ends-->
+            </div>
+        </div>
+        <!--container ends-->
+
+    </div>
+    <!--pepe content ends-->
+
+</div>
+

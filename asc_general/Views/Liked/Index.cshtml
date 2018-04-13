@@ -1,0 +1,63 @@
+﻿
+
+@using asc_general.Models;
+@model dynamic
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_UserProfileLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+	<!-- Listings -->
+<div class="dashboard-content">
+    <div id="titlebar">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Bəyəndiklərim</h2>
+                <!-- Breadcrumbs -->
+                <nav id="breadcrumbs">
+                    <ul>
+                        <li><a href="@Url.Action("Index", "user")">Home</a></li>
+                      
+                        <li>Bəyəndiklərim</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="dashboard-list-box margin-top-0">
+                <ul>
+                    @foreach (like mylikes in Model.mylikes)
+                    {
+                        <li>
+                            <div class="list-box-listing">
+                                <div class="list-box-listing-img"><a href="#"><img src="~/Uploads/@mylikes.blog.photo" alt=""></a></div>
+                                <div class="list-box-listing-content">
+                                    <div class="inner">
+                                        <h3>@mylikes.blog.title</h3>
+                                        <span>@Convert.ToString(string.Format("{0:dd/MM/yyyy}", mylikes.blog.date))</span>
+                                        <h5>@mylikes.blog.text.Substring(0, Math.Min(mylikes.blog.text.Length, 25)) ... </h5>
+                                     <p> <i class="fa fa-heart fa-lg text-danger"></i>  @mylikes.blog.mylikes Likes    </p>
+                                  
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    }
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    </div>

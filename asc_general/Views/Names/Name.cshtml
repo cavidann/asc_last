@@ -1,0 +1,41 @@
+﻿@using asc_general.Models
+@model dynamic
+
+@{
+    ViewBag.Title = "Adlar";
+    ViewBag.me = "active";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section adlarCss{
+    <link rel="stylesheet" href="~/Public/css/names.css">    
+}
+
+<!--names class starts-->
+<div class="allNames">
+    <div class="container">
+        <h3>Adlar</h3>
+        <div class="name">
+            @foreach (name ad in Model.Adlar)
+            {
+                if (ad.type == true)
+                {
+                    <h2>
+                        <img src="~/Public/images/mypics/baby-feet-pink.png" alt="">@ad.name1<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    </h2>
+                }
+                else
+                {
+                    <h2>
+                        <img src="~/Public/images/mypics/boyf.png" alt="">@ad.name1<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    </h2>
+                }
+                <p class="nameDefinition">
+                    @ad.decription
+                </p>
+            }
+        </div>
+
+    </div>
+</div>
+<!--names class ends-->

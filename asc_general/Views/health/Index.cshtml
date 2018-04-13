@@ -1,0 +1,212 @@
+﻿@using asc_general.Models;
+@using System.Dynamic;
+@model dynamic 
+@{
+    ViewBag.Title = "Index";
+    ViewBag.health = "active";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section healthCss{
+<link href="http://www.themesindustry.com/html/mitex/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://www.themesindustry.com/html/mitex/css/font-awesome.css" rel="stylesheet">
+<link href="http://www.themesindustry.com/html/mitex/css/animate.css" rel="stylesheet">
+<link rel="stylesheet" href="http://www.themesindustry.com/html/mitex/css/jquery.fancybox.css" type="text/css" media="screen" />
+<link rel="stylesheet" type="text/css" href="http://www.themesindustry.com/html/mitex/css/zerogrid.css">
+<link href="http://www.themesindustry.com/html/mitex/css/owl.carousel.css" rel="stylesheet">
+<link href="http://www.themesindustry.com/html/mitex/css/owl.transitions.css" rel="stylesheet">
+<link href="http://www.themesindustry.com/html/mitex/css/swiper.min.css" rel="stylesheet">
+@*<link href="../../../cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">*@
+
+<link href="http://www.themesindustry.com/html/mitex/css/loader.css" rel="stylesheet">
+<link href="http://www.themesindustry.com/html/mitex/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+<!--<link href="css/themify-icons.css" rel="stylesheet" type="text/css">-->
+@*<link href="~/Public/css/bootstrap.css" rel="stylesheet" type="text/css"> iki dene bootstrap ne vaxtdan qosulurask  *@ 
+<link href="~/Public/css/slick.css" rel="stylesheet" type="text/css">
+@*<link href="~/Public/css/health.css" rel="stylesheet" type="text/css">*@
+@*<link href="~/Public/css/gym.css" rel="stylesheet" type="text/css">*@
+<link rel="stylesheet" href="~/Public/css/food.css">
+<link rel="stylesheet" href="~/Public/css/stylel.css">
+}
+
+
+<!--Home end-->
+<!-- services start -->
+<section class="section" id="about" style="clear:both;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="heading-container">
+                    <h3>Sağlamlıq haqqında</h3>
+                    <span class="partition"></span>
+             
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-0 col-sm-8 col-sm-offset-2 text-center">
+                <img src="~/Public/images/about.jpg" alt="" />
+
+            </div>
+            <div class="col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod consectetur adipisicing elit, sed do adipisicing
+                    elit, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet, sed
+                    do eiusmod Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod consectetur adipisicing elit, sed do adipisicing
+                    elit, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet.
+                </p>
+                <h6>Lorem ipsum dolor sit amet</h6>
+                <p>
+                    Consectetur adipisicing elit, sed do adipisicing elit, Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod Lorem ipsum dolor sit amet, sed do eiusmod Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod Lorem ipsum dolor sit amet.
+                </p>
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+<section id="blog" class="blog section clearfix" >
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                <div class="section-title padding-bottom-50 text-center">
+                    <h4 class="color-flamingo"> Ən yeni Məqalələr </h4>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!--  End Section Header -->
+            <div class="blog-area">
+
+                @foreach (blog h_blog in Model.health_blog)
+                {
+                    <div class="col-sm-6 col-md-4 blog-box wow fadeInUp animated margin-bottom-30" data-wow-delay=".2s">
+                        <div class="blog-post">
+                            <figure class="image">
+                                <img alt="Blog Image" src="~/Uploads/@h_blog.photo" class="img-responsive"  style="height:217px" />
+                                <div class="overly">
+                                    <div class="overly-icon">
+                                        <a class="link" href="#"><i class="fa fa-arrows"></i></a>
+                                    </div>
+                                </div>
+                            </figure>
+                            <div class="contents-box">
+
+                                <div class="content">
+                                    <a href="single.blog.html">
+                                        <h4 class="color-black">@h_blog.title</h4>
+                                    </a>
+
+                                    <p class="text-muted">@h_blog.text.Substring(0,Math.Min(h_blog.text.Length,40)) ... </p>
+                                </div>
+                                <div class="row Continue-btn">
+                                    <div class="text-center">
+                                        <a href="@Url.Action("index","singleblog",new { id = h_blog.id })">Ətraflı Oxu &nbsp;&nbsp;&nbsp;<i class="fa fa-long-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!--Home end-->
+<!-- services start -->
+<div id="#services">
+
+    <!-- service one start -->
+
+
+    <div id="happy-clients" class="mid-level-padding" data-type="background" data-speed="10">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12  wow fadeInRight  ">
+                    <h2 class="text-center" style="color:#74a534;">Happy Clients</h2>
+                    <div id="owl-slider" class="owl-carousel owl-theme">
+                        <div class="item text-center">
+                            <div class="client-img"><img src="http://www.themesindustry.com/html/mitex/images/team1.jpg" alt="client"></div>
+                            <p class="p-margin">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting Donec
+                                pulvinar mi sit amet viverra justo hendrerit. Lorem Ipsum is simply dummy text of the
+                                printing and typesetting.
+                            </p>
+                            <h5>John Smith</h5>
+                            <p class="client-p">CEO - Avada Company</p>
+                        </div>
+                        <div class="item text-center">
+                            <div class="client-img"><img src="http://www.themesindustry.com/html/mitex/images/team1.jpg" alt="client"></div>
+                            <p class="p-margin">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting Donec
+                                pulvinar mi sit amet viverra justo hendrerit. Lorem Ipsum is simply dummy text of the
+                                printing and typesetting.
+                            </p>
+                            <h5>John Smith</h5>
+                            <p class="client-p">CEO - Avada Company</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="thinkers " class="mid-level-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-center ">
+                    <div class="section-top-heading">
+                        <h2 style="color:#74a534;">Bizim Heyət</h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row text-center">
+                @foreach (health_staff item in Model.health)
+                {
+                    <div class="col-md-3 col-sm-3 fadeInUp zoomIn" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <div class="thinker-wrap">
+                            <div class="thinker-image">
+                                <img src="~/Uploads/@item.photo" alt="" class="img-responsive">
+                                <div class="overlay">
+                                    <div class="overlay-inner">
+                                        <ul class=" list-inline">
+                                            <li><a href="@Url.Action("index","Dr_Profile",new { id = item.id})" class="text-center"><i class="fa fa-user" aria-hidden="true"></i><span></span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4 style="font-size:19px;">@item.name</h4>
+                            <h6>@item.profession</h6>
+                            <p class="text-muted">@item.text_about.Substring(0, Math.Min(item.text_about.Length, 40))....</p>
+                        </div>
+                    </div>
+                }
+
+             
+            </div>
+        </div>
+    </div>
+    <!-- our team -->
+</div>
+<!-- services end -->
+@section healthJs {
+
+
+    }

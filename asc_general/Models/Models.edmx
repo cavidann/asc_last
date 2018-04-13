@@ -1,0 +1,711 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ascModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="adminname" Type="nvarchar" MaxLength="50" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" />
+          <Property Name="image" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="blog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="255" />
+          <Property Name="photo" Type="nvarchar(max)" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="category_id" Type="int" />
+          <Property Name="text" Type="nvarchar(max)" />
+          <Property Name="mylikes" Type="int" />
+        </EntityType>
+        <EntityType Name="blog_category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="cartoon">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="255" />
+          <Property Name="photo" Type="nvarchar(max)" />
+          <Property Name="text" Type="nvarchar(max)" />
+          <Property Name="video_url" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="food_categories">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sira" Type="int" Nullable="false" />
+          <Property Name="category_name" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="foods">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="category_id" Type="int" />
+          <Property Name="text" Type="text" />
+          <Property Name="photo" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="gym_blog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="255" />
+          <Property Name="photo" Type="nvarchar(max)" />
+          <Property Name="description" Type="nvarchar" MaxLength="255" />
+          <Property Name="text" Type="nvarchar(max)" />
+          <Property Name="video_url" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="health_staff">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="profession" Type="nvarchar" MaxLength="255" />
+          <Property Name="photo" Type="nvarchar(max)" />
+          <Property Name="text_about" Type="nvarchar(max)" />
+          <Property Name="instagram" Type="nvarchar" MaxLength="255" />
+          <Property Name="facebook" Type="nvarchar" MaxLength="255" />
+          <Property Name="phone" Type="nvarchar" MaxLength="255" />
+          <Property Name="email" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="lettrs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="likes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="blog_id" Type="int" />
+          <Property Name="liked" Type="bit" />
+        </EntityType>
+        <EntityType Name="names">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="lettrs_id" Type="int" />
+          <Property Name="decription" Type="nvarchar(max)" />
+          <Property Name="type" Type="bit" />
+        </EntityType>
+        <EntityType Name="our_complex">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="region_id" Type="int" />
+          <Property Name="complex_name" Type="nvarchar(max)" />
+          <Property Name="address" Type="nvarchar(max)" />
+          <Property Name="phone" Type="nvarchar(max)" />
+          <Property Name="facebook" Type="nvarchar(max)" />
+          <Property Name="instagram" Type="nvarchar(max)" />
+          <Property Name="edu_or_gym" Type="bit" />
+          <Property Name="photo" Type="nvarchar(max)" />
+          <Property Name="text" Type="nvarchar(max)" />
+          <Property Name="map_url" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="regions">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="region" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="255" />
+          <Property Name="password1" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_blog_blog_category">
+          <End Role="blog_category" Type="Self.blog_category" Multiplicity="0..1" />
+          <End Role="blog" Type="Self.blog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="blog_category">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="blog">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_foods_food_categories">
+          <End Role="food_categories" Type="Self.food_categories" Multiplicity="0..1" />
+          <End Role="foods" Type="Self.foods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="food_categories">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="foods">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_likes_blog">
+          <End Role="blog" Type="Self.blog" Multiplicity="0..1" />
+          <End Role="likes" Type="Self.likes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="blog">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="likes">
+              <PropertyRef Name="blog_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_likes_user">
+          <End Role="user" Type="Self.user" Multiplicity="0..1" />
+          <End Role="likes" Type="Self.likes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="likes">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_names_lettrs">
+          <End Role="lettrs" Type="Self.lettrs" Multiplicity="0..1" />
+          <End Role="names" Type="Self.names" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lettrs">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="names">
+              <PropertyRef Name="lettrs_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_our_complex_regions">
+          <End Role="regions" Type="Self.regions" Multiplicity="0..1" />
+          <End Role="our_complex" Type="Self.our_complex" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="regions">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="our_complex">
+              <PropertyRef Name="region_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ascModelStoreContainer">
+          <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="blog" EntityType="Self.blog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="blog_category" EntityType="Self.blog_category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cartoon" EntityType="Self.cartoon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="food_categories" EntityType="Self.food_categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="foods" EntityType="Self.foods" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gym_blog" EntityType="Self.gym_blog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="health_staff" EntityType="Self.health_staff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="lettrs" EntityType="Self.lettrs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="likes" EntityType="Self.likes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="names" EntityType="Self.names" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="our_complex" EntityType="Self.our_complex" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="regions" EntityType="Self.regions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_blog_blog_category" Association="Self.FK_blog_blog_category">
+            <End Role="blog_category" EntitySet="blog_category" />
+            <End Role="blog" EntitySet="blog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_foods_food_categories" Association="Self.FK_foods_food_categories">
+            <End Role="food_categories" EntitySet="food_categories" />
+            <End Role="foods" EntitySet="foods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_likes_blog" Association="Self.FK_likes_blog">
+            <End Role="blog" EntitySet="blog" />
+            <End Role="likes" EntitySet="likes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_likes_user" Association="Self.FK_likes_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="likes" EntitySet="likes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_names_lettrs" Association="Self.FK_names_lettrs">
+            <End Role="lettrs" EntitySet="lettrs" />
+            <End Role="names" EntitySet="names" />
+          </AssociationSet>
+          <AssociationSet Name="FK_our_complex_regions" Association="Self.FK_our_complex_regions">
+            <End Role="regions" EntitySet="regions" />
+            <End Role="our_complex" EntitySet="our_complex" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ascModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DbAscEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="likes" EntityType="ascModel.like" />
+          <EntitySet Name="admins" EntityType="ascModel.admin" />
+          <EntitySet Name="blog_category" EntityType="ascModel.blog_category" />
+          <EntitySet Name="cartoons" EntityType="ascModel.cartoon" />
+          <EntitySet Name="food_categories" EntityType="ascModel.food_categories" />
+          <EntitySet Name="foods" EntityType="ascModel.food" />
+          <AssociationSet Name="FK_foods_food_categories" Association="ascModel.FK_foods_food_categories">
+            <End Role="food_categories" EntitySet="food_categories" />
+            <End Role="food" EntitySet="foods" />
+          </AssociationSet>
+          <EntitySet Name="gym_blog" EntityType="ascModel.gym_blog" />
+          <EntitySet Name="health_staff" EntityType="ascModel.health_staff" />
+          <EntitySet Name="lettrs" EntityType="ascModel.lettr" />
+          <EntitySet Name="names" EntityType="ascModel.name" />
+          <AssociationSet Name="FK_names_lettrs" Association="ascModel.FK_names_lettrs">
+            <End Role="lettr" EntitySet="lettrs" />
+            <End Role="name" EntitySet="names" />
+          </AssociationSet>
+          <EntitySet Name="our_complex" EntityType="ascModel.our_complex" />
+          <EntitySet Name="regions" EntityType="ascModel.region" />
+          <AssociationSet Name="FK_our_complex_regions" Association="ascModel.FK_our_complex_regions">
+            <End Role="region" EntitySet="regions" />
+            <End Role="our_complex" EntitySet="our_complex" />
+          </AssociationSet>
+          <EntitySet Name="blogs" EntityType="ascModel.blog" />
+          <AssociationSet Name="FK_blog_blog_category" Association="ascModel.FK_blog_blog_category">
+            <End Role="blog_category" EntitySet="blog_category" />
+            <End Role="blog" EntitySet="blogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_likes_blog" Association="ascModel.FK_likes_blog">
+            <End Role="blog" EntitySet="blogs" />
+            <End Role="like" EntitySet="likes" />
+          </AssociationSet>
+          <EntitySet Name="users" EntityType="ascModel.user" />
+          <AssociationSet Name="FK_likes_user" Association="ascModel.FK_likes_user">
+            <End Role="user" EntitySet="users" />
+            <End Role="like" EntitySet="likes" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="like">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="blog_id" Type="Int32" />
+          <Property Name="liked" Type="Boolean" />
+          <NavigationProperty Name="blog" Relationship="ascModel.FK_likes_blog" FromRole="like" ToRole="blog" />
+          <NavigationProperty Name="user" Relationship="ascModel.FK_likes_user" FromRole="like" ToRole="user" />
+        </EntityType>
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="adminname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="blog_category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="blogs" Relationship="ascModel.FK_blog_blog_category" FromRole="blog_category" ToRole="blog" />
+        </EntityType>
+        <EntityType Name="cartoon">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="video_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="food_categories">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sira" Type="Int32" Nullable="false" />
+          <Property Name="category_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="foods" Relationship="ascModel.FK_foods_food_categories" FromRole="food_categories" ToRole="food" />
+        </EntityType>
+        <EntityType Name="food">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="category_id" Type="Int32" />
+          <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="food_categories" Relationship="ascModel.FK_foods_food_categories" FromRole="food" ToRole="food_categories" />
+        </EntityType>
+        <Association Name="FK_foods_food_categories">
+          <End Type="ascModel.food_categories" Role="food_categories" Multiplicity="0..1" />
+          <End Type="ascModel.food" Role="food" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="food_categories">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="food">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="gym_blog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="video_url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="health_staff">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="profession" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="text_about" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="instagram" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="facebook" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="lettr">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="names" Relationship="ascModel.FK_names_lettrs" FromRole="lettr" ToRole="name" />
+        </EntityType>
+        <EntityType Name="name">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="lettrs_id" Type="Int32" />
+          <Property Name="decription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="type" Type="Boolean" />
+          <NavigationProperty Name="lettr" Relationship="ascModel.FK_names_lettrs" FromRole="name" ToRole="lettr" />
+        </EntityType>
+        <Association Name="FK_names_lettrs">
+          <End Type="ascModel.lettr" Role="lettr" Multiplicity="0..1" />
+          <End Type="ascModel.name" Role="name" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lettr">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="name">
+              <PropertyRef Name="lettrs_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="our_complex">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="region_id" Type="Int32" />
+          <Property Name="complex_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="facebook" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="instagram" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="edu_or_gym" Type="Boolean" />
+          <Property Name="photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="map_url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="region" Relationship="ascModel.FK_our_complex_regions" FromRole="our_complex" ToRole="region" />
+        </EntityType>
+        <EntityType Name="region">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="region1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="our_complex" Relationship="ascModel.FK_our_complex_regions" FromRole="region" ToRole="our_complex" />
+        </EntityType>
+        <Association Name="FK_our_complex_regions">
+          <End Type="ascModel.region" Role="region" Multiplicity="0..1" />
+          <End Type="ascModel.our_complex" Role="our_complex" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="region">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="our_complex">
+              <PropertyRef Name="region_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="blog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="category_id" Type="Int32" />
+          <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mylikes" Type="Int32" />
+          <NavigationProperty Name="blog_category" Relationship="ascModel.FK_blog_blog_category" FromRole="blog" ToRole="blog_category" />
+          <NavigationProperty Name="likes" Relationship="ascModel.FK_likes_blog" FromRole="blog" ToRole="like" />
+        </EntityType>
+        <Association Name="FK_blog_blog_category">
+          <End Type="ascModel.blog_category" Role="blog_category" Multiplicity="0..1" />
+          <End Type="ascModel.blog" Role="blog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="blog_category">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="blog">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_likes_blog">
+          <End Type="ascModel.blog" Role="blog" Multiplicity="0..1" />
+          <End Type="ascModel.like" Role="like" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="blog">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="like">
+              <PropertyRef Name="blog_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="password1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="likes" Relationship="ascModel.FK_likes_user" FromRole="user" ToRole="like" />
+        </EntityType>
+        <Association Name="FK_likes_user">
+          <End Type="ascModel.user" Role="user" Multiplicity="0..1" />
+          <End Type="ascModel.like" Role="like" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="like">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ascModelStoreContainer" CdmEntityContainer="DbAscEntities">
+          <EntitySetMapping Name="likes">
+            <EntityTypeMapping TypeName="ascModel.like">
+              <MappingFragment StoreEntitySet="likes">
+                <ScalarProperty Name="liked" ColumnName="liked" />
+                <ScalarProperty Name="blog_id" ColumnName="blog_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="admins">
+            <EntityTypeMapping TypeName="ascModel.admin">
+              <MappingFragment StoreEntitySet="admin">
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="adminname" ColumnName="adminname" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="blog_category">
+            <EntityTypeMapping TypeName="ascModel.blog_category">
+              <MappingFragment StoreEntitySet="blog_category">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cartoons">
+            <EntityTypeMapping TypeName="ascModel.cartoon">
+              <MappingFragment StoreEntitySet="cartoon">
+                <ScalarProperty Name="video_url" ColumnName="video_url" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="food_categories">
+            <EntityTypeMapping TypeName="ascModel.food_categories">
+              <MappingFragment StoreEntitySet="food_categories">
+                <ScalarProperty Name="category_name" ColumnName="category_name" />
+                <ScalarProperty Name="sira" ColumnName="sira" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="foods">
+            <EntityTypeMapping TypeName="ascModel.food">
+              <MappingFragment StoreEntitySet="foods">
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gym_blog">
+            <EntityTypeMapping TypeName="ascModel.gym_blog">
+              <MappingFragment StoreEntitySet="gym_blog">
+                <ScalarProperty Name="video_url" ColumnName="video_url" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="health_staff">
+            <EntityTypeMapping TypeName="ascModel.health_staff">
+              <MappingFragment StoreEntitySet="health_staff">
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="facebook" ColumnName="facebook" />
+                <ScalarProperty Name="instagram" ColumnName="instagram" />
+                <ScalarProperty Name="text_about" ColumnName="text_about" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="profession" ColumnName="profession" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="lettrs">
+            <EntityTypeMapping TypeName="ascModel.lettr">
+              <MappingFragment StoreEntitySet="lettrs">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="names">
+            <EntityTypeMapping TypeName="ascModel.name">
+              <MappingFragment StoreEntitySet="names">
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="decription" ColumnName="decription" />
+                <ScalarProperty Name="lettrs_id" ColumnName="lettrs_id" />
+                <ScalarProperty Name="name1" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="our_complex">
+            <EntityTypeMapping TypeName="ascModel.our_complex">
+              <MappingFragment StoreEntitySet="our_complex">
+                <ScalarProperty Name="map_url" ColumnName="map_url" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="edu_or_gym" ColumnName="edu_or_gym" />
+                <ScalarProperty Name="instagram" ColumnName="instagram" />
+                <ScalarProperty Name="facebook" ColumnName="facebook" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="complex_name" ColumnName="complex_name" />
+                <ScalarProperty Name="region_id" ColumnName="region_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="regions">
+            <EntityTypeMapping TypeName="ascModel.region">
+              <MappingFragment StoreEntitySet="regions">
+                <ScalarProperty Name="region1" ColumnName="region" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="blogs">
+            <EntityTypeMapping TypeName="ascModel.blog">
+              <MappingFragment StoreEntitySet="blog">
+                <ScalarProperty Name="mylikes" ColumnName="mylikes" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="ascModel.user">
+              <MappingFragment StoreEntitySet="user">
+                <ScalarProperty Name="password1" ColumnName="password1" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

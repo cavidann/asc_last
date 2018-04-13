@@ -1,0 +1,101 @@
+﻿@using asc_general.Models
+@using PagedList.Mvc
+@using PagedList;
+
+@{
+    ViewBag.Title = "allComplex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section allComplexCss {
+    <link rel="stylesheet" href="~/Public/css/food.css">
+    <link rel="stylesheet" href="~/Public/css/complex.css">
+    <link rel="stylesheet" href="~/Public/css/allcomplex.css">
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+
+    @{
+        if (ViewBag.kindergardenType.edu_or_gym == true)
+        {
+            <link rel="stylesheet" href="~/Public/css/eduComplexCss.css">
+        }
+        else
+        {
+            <link rel="stylesheet" href="~/Public/css/gymComplexCss.css">
+        }
+    }
+}
+
+<div class="complexes">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-xs-12 col-sm-12">
+                <h1 class="regionName">@ViewBag.Region.region1</h1>
+                @foreach (our_complex complex in ViewBag.kindergardenByRegion)
+                {
+                    <div class="row singleComplex">
+                        <div class="col-md-3 col-sm-3">
+                            <div class="complexImg">
+                                <img src="~/Uploads/@complex.photo" alt="@complex.complex_name" class="img-responsive" />
+                            </div>
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <div class="complexInfo">
+                                <div class="complexName">
+                                    <h3><a href=@Url.Action("index","complex",new { id=complex.id,regionID = complex.region_id})>@complex.complex_name</a></h3>
+                                </div>
+                                <div class="complexContact">
+                                    <div class="info">
+                                        <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;@complex.address</p>
+                                    </div>
+                                    <div class="info">
+                                        <p><i class="fa fa-mobile" aria-hidden="true"></i>&nbsp;&nbsp;@complex.phone</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                @Html.PagedListPager((IPagedList)ViewBag.kindergardenByRegion, page => Url.Action("allComplex", "complex", new { id = ViewBag.Region.id, complexType = ViewBag.kindergardenType.edu_or_gym, page }))
+            </div>
+
+            <div class="col-md-4 col-xs-12 col-sm-12">
+                <div id="warpper-blog clearfix" class="warpper-blog section">
+                    <div class="blog-sidber">
+                        <div class="clearfix"></div>
+                        <!-- End Search Form-->
+                        <div class="recent-post">
+                            <div class="sections">
+                                <h2>Digər rayonlar</h2>
+                            </div>
+                            <ul class="recent-post-list list-inline">
+                                @foreach (region region in ViewBag.otherRegions)
+                                {
+                                    if (region.our_complex.Count(c => c.edu_or_gym == ViewBag.kindergardenType.edu_or_gym) != 0)
+                                    {
+                                        <li>
+                                            <a href=@Url.Action("allComplex", "complex",new { id = region.id, complexType = ViewBag.kindergardenType.edu_or_gym,page = 1})>
+                                                <h3>@region.region1</h3>
+                                                @{
+                                                    if (ViewBag.kindergardenType.edu_or_gym == true)
+                                                    {
+                                                        <p> (@region.our_complex.Where(e => e.edu_or_gym == true).Count()) </p>
+                                                    }
+                                                    else
+                                                    {
+                                                        <p> (@region.our_complex.Where(e => e.edu_or_gym == false).Count()) </p>
+                                                    }
+                                                }
+                                            </a>
+                                        </li>
+                                                        }
+                                                    }
+                            </ul>
+                        </div>
+                        <div class="clearfix"></div>
+                        <!-- End Recent Post -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

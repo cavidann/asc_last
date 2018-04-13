@@ -1,0 +1,76 @@
+
+.sections {
+    border-bottom: 3px solid #ffce72;
+}
+.warpper-blog .inner-blog li i {
+    background: #ffce72;
+    border-radius: 6px;
+    font-size: 20px;
+    color: white;
+    width: 35px;
+    text-align: center;
+    height: 35px;
+    padding: 5px;
+    margin-right: 5px;
+    border: 1px solid white;
+}
+.slider {
+     background:white;
+     margin-bottom:50px;
+}
+
+    .warpper-blog .inner-blog li i:hover {
+        color: #ffce72;
+        background: white;
+        transition: all 0.6s;
+        border: 1px solid #ffce72;
+    }
+.warpper-blog {
+    background: white;
+}
+.sections h2 {
+    color: #5c5c5c;
+}
+
+.warpper-blog .blog-sidber .recent-post ul > li > span {
+    color: #ffce72;
+}
+.warpper-blog .blog-sidber .recent-post ul > li {
+    border-bottom: 1px solid #ffce72;
+}
+
+    .warpper-blog .blog-sidber .recent-post ul > li > a > h3:hover {
+        color: #ffce72;
+    }
+.warpper-blog .inner-blog .post-title a {
+    color: #ffce72;
+}
+
+.prevnext i {
+    color: #ffce72;
+   font-size:20px;
+}
+.prevnext {
+    margin-top:30px;
+}
+.prevnext a {
+    color: #5c5c5c;
+    font-size: 20px;
+    margin-left:50px;
+}
+.warpper-blog .blog-sidber .recent-post ul li h3 {
+    float: left;
+    margin-right:20px;
+}
+.warpper-blog .blog-sidber .recent-post ul li p {
+    color: #ffce72;
+    font-size: 20px;
+}
+/*facebook comment*/
+
+.fb-comments {
+    margin-bottom: 50px;
+}
+.post-text {
+    margin-bottom:50px;
+}

@@ -1,0 +1,74 @@
+.name {
+  clear: both;
+  background: white;
+  padding: 30px 0; }
+  .name .baby {
+    padding: 40px 0 45px; }
+    .name .baby .baby-category-heading h1 {
+      color: #646a82;
+      margin-bottom: 15px; }
+      .name .baby .baby-category-heading h1 img {
+        width: 53px;
+        position: relative;
+        bottom: 20px; }
+    .name .baby .baby_names ul {
+      position: relative; }
+      .name .baby .baby_names ul li {
+        position: relative;
+        display: inline-block;
+        margin-right: 15px; }
+        .name .baby .baby_names ul li::after {
+          content: "";
+          width: 4px;
+          height: 4px;
+          border-radius: 100%;
+          background: #646a82;
+          position: absolute;
+          top: 8px;
+          left: 18px; }
+        .name .baby .baby_names ul li a {
+          color: #646a82;
+          font-size: 20px;
+          font-family: 'Bubblegum Sans', cursive; }
+          .name .baby .baby_names ul li a:hover {
+            text-decoration: none; }
+          .name .baby .baby_names ul li a:focus {
+            text-decoration: none; }
+      .name .baby .baby_names ul::after {
+        content: "";
+        width: 4px;
+        height: 4px;
+        border-radius: 100%;
+        background: #646a82;
+        position: absolute;
+        top: 8px;
+        left: 87px; }
+
+@media only screen and (min-width: 960px) and (max-width: 1240px) {
+  .name .baby .baby_names ul::after {
+    left: -4px; } }
+@media only screen and (min-width: 480px) and (max-width: 959px) {
+  .name .baby .baby_names ul::after {
+    left: -10px; }
+
+  .name .baby {
+    padding-bottom: 20px; } }
+@media only screen and (max-width: 479px) {
+  .name .baby .baby_names ul::after {
+    left: 0; }
+
+  .name .baby .baby-category-heading h1 {
+    margin-bottom: 10px; }
+    .name .baby .baby-category-heading h1 img {
+      width: 45px; }
+
+  .name .baby {
+    padding-bottom: 20px; } }
+@media only screen and (max-width: 319px) {
+  .name .baby .baby_names ul::after {
+    left: -10px; }
+
+  .name .baby .baby_names ul li a {
+    font-size: 18px; } }
+
+/*# sourceMappingURL=name.css.map */

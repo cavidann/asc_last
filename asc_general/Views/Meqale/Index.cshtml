@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_UserProfileLayout.cshtml";
+}
+@using asc_general.Models;
+@{
+    var user = Session["user"] as user;
+}
+
+    <!-- Navigation
+    ================================================== -->
+    <!-- Responsive Navigation Trigger -->
+
+    <!-- Navigation / End -->
+    <!-- Content
+    ================================================== -->
+    <div class="dashboard-content">
+        <!-- Titlebar -->
+        <div id="titlebar">
+            <div class="row">
+                <form style="width:600px" action="https://formspree.io/cavi98@icloud.com"
+                      method="POST">
+                    <p>header</p>
+                    <input type="text" name="header">
+                    <p>content</p>
+                    <textarea type="text" name="content" class="form-control" width="600" rows="3"></textarea>
+                    <p>your email</p>
+                    <input type="text" name="user_email" value="@user.email" style="display:none;" /> 
+                    <input type="submit" value="Send">
+                </form>
+            </div>
+        </div>
+       
+    </div>
+    <!-- Content / End -->
+
+
+

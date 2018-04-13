@@ -1,0 +1,60 @@
+.searching{
+    clear: both;
+    padding: 40px 0 60px;
+    background: white;
+}
+
+.input-group{
+    width: 67%;
+    input{
+        box-shadow: none;
+        border:none;
+        border-radius: 0;
+        border-bottom: 3px solid #A8B8CA;
+        padding: 15px 30px 15px 15px;
+        &:focus{
+            box-shadow: none;
+            border-color:#A8B8CA;
+        }
+    }
+
+    span{
+        background: none;
+        border: none;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        padding: 0;
+        color:#A8B8CA;
+        cursor:pointer;
+
+        button{
+            border: none;
+            padding: 0;
+            position: absolute;
+            top: -4px;
+            left: -25px;
+            font-size: 20px;
+
+            &:hover{
+                background: none;
+            }
+
+            
+            &:focus{
+                background: none;
+                outline: 0;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .input-group {
+        position: relative;
+        left: 20%;
+
+        span{
+            font-size: 18px;
+        }
+    }
+}

@@ -1,0 +1,51 @@
+﻿@model asc_general.Models.food
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_adminlayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>food</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.text)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.photo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.photo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.food_categories.category_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.food_categories.category_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

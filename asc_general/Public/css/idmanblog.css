@@ -1,0 +1,14 @@
+.prevnext i {
+    color: #74a534;
+    font-size: 20px;
+}
+
+.prevnext {
+    margin-top: 30px;
+}
+
+    .prevnext a {
+        color: #5c5c5c;
+        font-size: 20px;
+        margin-left: 50px;
+    }

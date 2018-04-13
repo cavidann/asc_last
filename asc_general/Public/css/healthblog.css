@@ -1,0 +1,42 @@
+.sections h2 {
+    color: #74a534;
+}
+
+.warpper-blog {
+    background: white;
+}
+
+    .warpper-blog .blog-sidber .recent-post ul > li {
+        border-bottom: 1px solid #74a534;
+    }
+
+.sections {
+    border-bottom: 3px solid #74a534;
+}
+
+.warpper-blog .blog-sidber .recent-post ul > li > span {
+    color: #74a534;
+}
+
+.warpper-blog .blog-sidber .recent-post ul > li > h6 > a:hover {
+    color: #74a534;
+}
+
+.warpper-blog .inner-blog .post-title a {
+    color: #74a534;
+}
+.prevnext i {
+    color: #74a534;
+    font-size: 20px;
+}
+
+.prevnext {
+    margin-top: 30px;
+}
+
+    .prevnext a {
+        color: #5c5c5c;
+        font-size: 20px;
+        margin-left: 50px;
+    }
+

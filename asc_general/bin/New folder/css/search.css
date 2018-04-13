@@ -1,0 +1,45 @@
+.searching {
+  clear: both;
+  padding: 40px 0 60px;
+  background: white; }
+
+.input-group {
+  width: 67%; }
+  .input-group input {
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    border-bottom: 3px solid #A8B8CA;
+    padding: 15px 30px 15px 15px; }
+    .input-group input:focus {
+      box-shadow: none;
+      border-color: #A8B8CA; }
+  .input-group span {
+    background: none;
+    border: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 0;
+    color: #A8B8CA;
+    cursor: pointer; }
+    .input-group span button {
+      border: none;
+      padding: 0;
+      position: absolute;
+      top: -4px;
+      left: -25px;
+      font-size: 20px; }
+      .input-group span button:hover {
+        background: none; }
+      .input-group span button:focus {
+        background: none;
+        outline: 0; }
+
+@media only screen and (max-width: 767px) {
+  .input-group {
+    position: relative;
+    left: 20%; }
+    .input-group span {
+      font-size: 18px; } }
+
+/*# sourceMappingURL=search.css.map */

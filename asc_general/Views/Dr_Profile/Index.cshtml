@@ -1,0 +1,87 @@
+﻿@using asc_general.Models;
+@model dynamic
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section dr_profileCss {
+
+    <link rel="stylesheet" href="~/Public/css/food.css">
+   <link rel="stylesheet" href="~/Public/css/dr_profile.css">
+
+}
+
+<!-- Strat Blog Details -->
+<div id="warpper-blog clearfix" class="warpper-blog section">
+    <div class="container">
+        <div class="row">
+            <!-- Strat Left Blog sidber -->
+            <div class="col-sm-12 col-md-8">
+                <div class="blog-warpper margin-bottom-30">
+                    <article class="inner-blog">
+                        <figure class="margin-bottom-30 image">
+                            <div class="row">
+                                <div class="col-md-5">
+                                <img class="img-responsive" src="~/Uploads/@Model.staffId.photo" alt="Blog Image">
+                                </div>
+                                <div class="col-md-5">
+                                <h2 class="post-title color-flamingo"><a href="#">@Model.staffId.name</a></h2>
+                                    <h4>@Model.staffId.profession</h4>
+                                    <h4>Phone:@Model.staffId.phone</h4>
+                                    <h4>Email:@Model.staffId.email</h4>
+                                    <ul>
+                                        
+                                        <li>
+                                            <a href="@Model.staffId.facebook"> <i class="fa fa-facebook" aria-hidden="true"> </i> </a> 
+                                        </li>
+                                        <li>
+                                            <a href="@Model.staffId.instagram"> <i class="fa fa-instagram" aria-hidden="true"> </i> </a> 
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-2"></div>                               
+                            </div>
+                        </figure>
+                        @*<h2 class="post-title color-flamingo"><a href="#">@Model.staffId.name</a></h2>*@
+                        <div class="lower-part">
+                            <div class="post-text">
+                                <p> @Model.staffId.text_about</p>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- End Article -->
+                </div>
+            </div><!-- End Left Left Sidber -->
+            <!--  Strat Blog Right Sidber -->
+            <div class="col-sm-12 col-md-4">
+                <div class="blog-sidber">
+                    <div class="clearfix"></div>
+                    <!-- End Search Form-->
+                    <div class="recent-post">
+                        <div class="sections">
+                            <h2>Digər Həkimler</h2>
+                        </div>
+                        <ul class="recent-post-list list-inline">
+                            @foreach (health_staff dr in Model.other_doctors)
+                            {
+                                <li>
+                                    <a href="@Url.Action("index","Dr_Profile",new { id =dr.id})"><img src="~/Uploads/@dr.photo" class="img-responsive" alt="blog01"></a>
+                                    <h6><a class="color-black" href="#">@dr.name </a></h6>
+                                    <span class="fa fa-clock-o color"></span> &nbsp; @dr.profession
+                                </li>
+                            }
+
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- End Recent Post -->
+
+
+                </div>
+            </div><!-- End Left Left Sidber -->
+        </div><!-- End Row -->
+    </div>
+</div>
+<!-- End Blog Details -->
+

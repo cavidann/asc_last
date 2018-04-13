@@ -1,0 +1,196 @@
+﻿@using System.Dynamic;
+@using asc_general.Models;
+@model dynamic
+@{
+    ViewBag.Title = "Index";
+    ViewBag.food = "active";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section foodCss {
+
+<link rel="stylesheet" href="~/Public/css/food.css">
+
+    }
+ 
+<!-- Strat Priching Data -->
+
+    <!-- About The Food -->
+<section class="about-food" style="clear:both">
+    <div class="container">
+        <div class="row">
+            <!-- About Img Section -->
+            <div class="col-sm-5">
+                <figure class="about-sec-img">
+                    <img class="animate fadeInLeft" data-wow-delay="0.5s" src="~/Public/images/aboutfood.png">
+                </figure>
+            </div>
+            <!-- About Img Section -->
+            <!-- About To Food -->
+            <div class="col-sm-7">
+                <div class="about-sec section-padding-top">
+                    <h2>About <strong>Our School</strong><span>Lorem ipsum dolor sit amet</span></h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar tellus sed mauvehicula
+                        tempor. In hac habitasse platea dictumst. Donec nunc nunc, interdum sed aliquet quis, conditum
+                        vitae enim. Quisque molestie consectetur urna quis scelerisque. Morbi at lectus sapien. Donec
+                        fgiat arcu in mi placerat ullamcorper.
+                    </p>
+                    <p>
+                        In tempor, ex id viverra convallis, ante augue vestibulum leo, eget elementum risus nulla bibendum
+                        nisl. Maecenas lacinia libero tincidunt justo bibendum sagittis. Duis gravida massa ac vehicula
+                        pulvinar. Nunc ligula orci, vulputate id tempor ac, tincidunt in orci. Etiam nulla lectus,
+                        commodo quis tortor et, congue volutpat velit.
+                    </p>
+                </div>
+            </div>
+            <!-- About To Food -->
+        </div>
+    </div>
+</section>
+<!-- About The Food -->
+
+
+
+<section id="our-menu" class="our-menu section section-bg-1 clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="section-title padding-bottom-30 text-center">
+                    <h4 class="color-flamingo">Xüsusi Reseptlər</h4>
+           
+                    <div class="clearfix">
+                    </div>
+               
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="bd-tab-menu">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                      @{
+                            var i =0;
+                        foreach (var f_cat in Model.food_cat)
+                        {
+                            var active = i++ == 0 ? "active" : "";
+                            <li role="presentation" class="@active">
+                                <a href="#@f_cat.category_name" aria-controls="@f_cat.category_name" role="tab" data-toggle="tab">@f_cat.category_name</a>
+                            </li>
+                        }
+                        }
+                    </ul>
+
+                
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                     @{
+                         var j = 0;
+                         foreach (var f in Model.foods)
+                         {
+
+                             var active = j++ == 0 ? "active" : "";
+                          
+                                <div role="tabpanel" class="tab-pane fade in  @active" id="@f.food_categories.category_name">
+                                    @for (int k = 0; k < 6; k++)
+                                    {
+                                    <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <div class="bd-item-col">
+                                            <div class="bd-food-image" style="width:100%;height:240px">
+                                                <img src="~/Uploads/@f.photo" alt=""   style="width:350px;height:240px">
+                                                <div class="bd-food-details">
+                                                    <a href="@Url.Action("index","recepts",new {id = f.id, categoryID = f.category_id})">
+                                                        <h3> @f.name</h3>
+                                                         <i class="fa fa-link" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    }
+                                </div>
+                             
+
+                         }
+                    } 
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Priching Data -->
+
+<!-- Start Video Section -->
+<section class="bd-video-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="bd-video-col text-center">
+                    <h2>Uşaq yeməkləri nece hazırlanmalı</h2>
+                    <a class="demo" href="https://www.youtube.com/watch?v=40LsnzpcNKg"><i class="fa fa-play-circle" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- Strat Blog Area -->
+<section id="blog" class="blog section clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                <div class="section-title padding-bottom-50 text-center">
+                    <h4 class="color-flamingo"> Ən yeni Məqalələr </h4>
+               
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!--  End Section Header -->
+            <div class="blog-area">
+
+          @foreach (blog fblog in Model.food_blog)
+          {
+            <div class="col-sm-6 col-md-4 blog-box wow fadeInUp animated margin-bottom-30" data-wow-delay=".2s">
+                <div class="blog-post">
+                    <figure class="image">
+                        <img alt="Blog Image" src="~/Uploads/@fblog.photo" class="img-responsive"  style="height:217px">
+                        <div class="overly">
+                            <div class="overly-icon">
+                                <a class="link" href="#"><i class="fa fa-arrows"></i></a>
+                            </div>
+                        </div>
+                    </figure>
+                    <div class="contents-box">
+                        <div class="content">
+                            <a href="single.blog.html">
+                                <h4 class="color-flamingo">@fblog.title</h4>
+                            </a>
+
+                            <p class="text-muted">@fblog.text.Substring(0, Math.Min(fblog.text.Length, 40))....</p>
+                        </div>
+                        <div class="row Continue-btn">
+                            <div class="text-center">
+                                <a href="@Url.Action("index","singleblog",new { id = fblog.id })">Ətraflı Oxu &nbsp;&nbsp;&nbsp; <i class="fa fa-long-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          }
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Blog Area -->
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="afeed3a0b55349a9b505774e6bfa5080" Name="Diagram1">
+        <EntityTypeShape EntityType="ascModel.like" Width="1.5" PointX="10.25" PointY="6.125" />
+        <EntityTypeShape EntityType="ascModel.admin" Width="1.5" PointX="8.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ascModel.blog_category" Width="1.5" PointX="5.75" PointY="5.375" />
+        <EntityTypeShape EntityType="ascModel.cartoon" Width="1.5" PointX="10.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ascModel.food_categories" Width="1.5" PointX="12.375" PointY="1.125" />
+        <EntityTypeShape EntityType="ascModel.food" Width="1.5" PointX="14.625" PointY="0.875" />
+        <AssociationConnector Association="ascModel.FK_foods_food_categories" />
+        <EntityTypeShape EntityType="ascModel.gym_blog" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="ascModel.health_staff" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ascModel.lettr" Width="1.5" PointX="0.75" PointY="13.25" />
+        <EntityTypeShape EntityType="ascModel.name" Width="1.5" PointX="3" PointY="12.875" />
+        <AssociationConnector Association="ascModel.FK_names_lettrs" />
+        <EntityTypeShape EntityType="ascModel.our_complex" Width="1.5" PointX="9.625" PointY="10" />
+        <EntityTypeShape EntityType="ascModel.region" Width="1.5" PointX="7.375" PointY="10.875" />
+        <AssociationConnector Association="ascModel.FK_our_complex_regions" />
+        <EntityTypeShape EntityType="ascModel.blog" Width="1.5" PointX="8" PointY="4.75" />
+        <AssociationConnector Association="ascModel.FK_blog_blog_category" />
+        <AssociationConnector Association="ascModel.FK_likes_blog" />
+        <EntityTypeShape EntityType="ascModel.user" Width="1.5" PointX="3.375" PointY="0.875" />
+        <AssociationConnector Association="ascModel.FK_likes_user" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

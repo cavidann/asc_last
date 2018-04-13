@@ -1,0 +1,57 @@
+﻿@using asc_general.Models;
+@model dynamic
+
+@{
+    ViewBag.Title = "Adlar";
+    ViewBag.letter = "active";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section herflerCss{
+    <link rel="stylesheet" href="~/Public/css/name.css">
+}
+
+
+<!--name class starts-->
+<div class="name">
+    <div class="container">
+        <div class="baby baby-girl-name">
+            <div class="baby-category-heading">
+                <h1 class="text-center">
+                    Qız adları
+                    <img src="~/Public/images/mypics/baby-feet-pink.png" alt="">
+                </h1>
+            </div>
+            <div class="baby_names">
+                <ul class="text-center">
+                    @foreach (lettr l in Model.herfler)
+                    {
+                        <li>
+                            <a href=@Url.Action("name", "names",new { id=l.id, gender=true})>@l.name</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <div class="baby baby-boy-name">
+            <div class="baby-category-heading">
+                <h1 class="text-center">
+                    Oğlan adları
+                    <img src="~/Public/images/mypics/boyf.png" alt="">
+                </h1>
+            </div>
+            <div class="baby_names">
+                <ul class="text-center">
+                    @foreach (lettr l in Model.herfler)
+                    {
+                        <li>
+                            <a href=@Url.Action("name","names",new { id=l.id,gender=false})>@l.name</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--name class ends-->

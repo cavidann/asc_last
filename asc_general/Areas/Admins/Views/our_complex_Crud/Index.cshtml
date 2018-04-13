@@ -1,0 +1,74 @@
+﻿@model IEnumerable<asc_general.Models.our_complex>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admins/Views/Shared/_adminlayout.cshtml";
+}
+
+<h2>Our_Complex</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.complex_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address)
+        </th>
+      
+   
+        <th>
+            @Html.DisplayNameFor(model => model.edu_or_gym)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.photo)
+        </th>
+       
+    
+        <th>
+            @Html.DisplayNameFor(model => model.region.region1)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.complex_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.address)
+        </td>
+       
+      
+        <td>
+            @if (item.edu_or_gym == true)
+            {
+                <p>Tehsil</p>
+            }
+            @if (item.edu_or_gym == false)
+            {
+                <p>Idman</p>
+            }
+
+        </td>
+
+        <td>
+            <img src="~/Uploads/@Html.DisplayFor(modelItem => item.photo)" width="100" alt="Image" />
+        </td>
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.region.region1)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

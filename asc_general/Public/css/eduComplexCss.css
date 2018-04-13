@@ -1,0 +1,94 @@
+﻿.warpper-blog .inner-blog .post-title a {
+    color: #ffce72;
+}
+
+.about-complex h4 .fa {
+    color: #FFCE72;
+}
+
+.warpper-blog .inner-blog li i {
+    background: #ffce72;
+}
+
+.sections {
+    border-bottom: 3px solid #ffce72;
+}
+
+.activeInCarousel {
+    border: 4px solid #FFCE72;
+}
+
+.slider h2 {
+    color: #FFCE72;
+}
+
+.warpper-blog .blog-sidber .recent-post ul > li > a > h3:hover {
+    color: #ffce72;
+}
+
+.complexContact .info i {
+    color: #FFCE72;
+}
+
+.complexName h3 a:hover {
+    color: #FFCE72;
+}
+
+.pagination li a {
+    color: #FFCE72;
+    border-color: #FFCE72;
+}
+
+    .pagination li a:hover {
+        background-color: #FFCE72;
+        color: white;
+        border-color: #FFCE72;
+    }
+
+    .pagination li a:focus {
+        background-color: #FFCE72;
+        color: white;
+        border-color: #FFCE72;
+    }
+
+.pagination .active a {
+    background-color: #FFCE72;
+    border-color: #FFCE72;
+}
+
+    .pagination .active a:hover {
+        background-color: #FFCE72;
+        border-color: #FFCE72;
+    }
+
+    .pagination .active a:focus {
+        background-color: #FFCE72;
+        border-color: #FFCE72;
+    }
+
+.pagination .disabled a {
+    color: #FFCE72;
+    border-color: #FFCE72;
+}
+
+    .pagination .disabled a:hover {
+        color: #FFCE72;
+        border-color: #FFCE72;
+    }
+
+.PagedList-ellipses:focus {
+    outline: 0
+}
+
+.pagination .disabled a:focus {
+    color: #FFCE72;
+    border-color: #FFCE72;
+    outline: 0;
+}
+
+
+@media screen and (max-width: 767px) {
+    .complexInfo {
+        border-bottom: 2px solid #FFCE72;
+    }
+}

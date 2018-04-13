@@ -1,0 +1,32 @@
+﻿
+.sections {
+    border-bottom: 3px solid #f32a2a;
+}
+.warpper-blog .blog-sidber .recent-post ul > li {
+    border-bottom: 1px solid #f32a2a;
+}
+.warpper-blog .blog-sidber .recent-post ul li p {
+    color: #f32a2a;
+    
+}
+.complexName h3 a:hover {
+    color: #f32a2a;
+}
+.warpper-blog .blog-sidber .recent-post ul > li > a > h3:hover {
+    color: #f32a2a;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    z-index: 2;
+    color: #ffffff;
+    cursor: default;
+    background-color: #f32a2a!important;
+    border-color: #f32a2a!important;
+}
+.pagination > li > a {
+    color: #f32a2a;
+    border: 1px solid #f32a2a!important;
+}
+    .pagination > li > a:hover {
+        color: #f32a2a;
+    }

@@ -1,0 +1,87 @@
+﻿@using asc_general.Models
+@model dynamic
+@using PagedList.Mvc
+@using PagedList;
+
+@{
+    ViewBag.Title = "Allrecepts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section allReceptsCss {
+    <link rel="stylesheet" href="~/Public/css/food.css">
+    <link rel="stylesheet" href="~/Public/css/complex.css">
+    <link rel="stylesheet" href="~/Public/css/allcomplex.css">
+    <link rel="stylesheet" href="~/Public/css/gymComplexCss.css">
+    <link rel="stylesheet" href="~/Public/css/allrecepts.css">
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+
+  }
+
+<div class="complexes">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-xs-12 col-sm-12">
+                <h1 class="regionName">@ViewBag.food_cat_id.category_name</h1>
+                @foreach (food f in ViewBag.receptbycategories)
+                {
+                    <div class="row singleComplex">
+                        <div class="col-md-3 col-sm-3">
+                            <div class="complexImg">
+                                <img src="~/Uploads/@f.photo" alt="@f.name" class="img-responsive" />
+                            </div>
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <div class="complexInfo">
+                                <div class="complexName">
+                                    <h3><a href=@Url.Action("index","Recepts",new { id=f.id, categoryID = f.category_id})>@f.name</a></h3>
+                                </div>
+                                <div class="complexContact">
+                                    <div class="info">
+                                        <p>@f.text.Substring(0, Math.Min(f.text.Length, 40))...</p>
+                                    </div>
+                                    @*<div class="info">
+                                        <p><i class="fa fa-mobile" aria-hidden="true"></i>&nbsp;&nbsp;@complex.phone</p>
+                                    </div>*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                @Html.PagedListPager((IPagedList)ViewBag.receptbycategories, page => Url.Action("allrecepts", "recepts", new { id = ViewBag.food_cat_id.id, page }))
+            </div>
+            <div class="col-md-4 col-xs-12 col-sm-12">
+                <div id="warpper-blog clearfix" class="warpper-blog section">
+                    <div class="blog-sidber">
+                        <div class="clearfix"></div>
+                        <!-- End Search Form-->
+                        <div class="recent-post">
+                            <div class="sections">
+                                <h2>Digər rayonlar</h2>
+                            </div>
+                            <ul class="recent-post-list list-inline">
+                                @foreach (food_categories f_cat in ViewBag.othercategories)
+                                {
+                                   
+                                        <li>
+                                            <a href=@Url.Action("Allrecepts", "Recepts",new { id = f_cat.id })>
+                                                <h3>@f_cat.category_name</h3>
+                                               
+                                                     <p> (@f_cat.foods.Count()) </p>
+                                                    
+                                                
+                                            </a>
+                                        </li>
+                                                        
+                                                    }
+                            </ul>
+                        </div>
+                        <div class="clearfix"></div>
+                        <!-- End Recent Post -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    

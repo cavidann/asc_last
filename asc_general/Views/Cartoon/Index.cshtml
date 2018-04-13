@@ -1,0 +1,58 @@
+﻿@using System.Dynamic;
+@using asc_general.Models;
+@model dynamic
+
+@{ 
+
+
+    ViewBag.Title = "Index";
+    ViewBag.cartoon = "active";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@section cizgiCss{
+    <link rel="stylesheet" href="~/Public/css/cizgi.css">
+
+}
+
+
+ <!--wrapper starts-->
+<div class="wrapper">
+    <!--cizgi content starts-->
+    <div class="kidsbg">
+        <div class="container">
+            <h2 class="dt-sc-hr-green-title dark-purple text-center marginTop25">Cizgi Filmlər</h2>
+          
+            <ul id="hexGrid">
+
+         @foreach (cartoon ctoon in Model.cartoon)
+               {
+                <li class="hex">
+                    <div class="hexIn">                        
+                        <a class="hexLink" href="@Url.Action("index","cartoon_blog",new { id =ctoon.id })">                            
+                            <img src="~/Uploads/@ctoon.photo" alt="" />
+                            <h1>@ctoon.title</h1>
+                            <i class="fa fa-link" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </li>
+                      }
+            </ul>
+                <div class="dt-sc-hr-small"></div>
+
+        </div>
+    </div>
+    <!--cizgi content ends-->
+
+</div>
+<!--wrapper ends-->
+
+
+
+
+
+
+
+
+

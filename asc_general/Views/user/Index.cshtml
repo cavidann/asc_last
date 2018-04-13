@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_UserProfileLayout.cshtml";
+}
+
+
+
+@using asc_general.Models;
+@{
+    
+    var  user =  Session["user"] as user;
+
+}
+
+
+    <div class="clearfix"></div>
+    <!-- Dashboard -->
+    @*<div id="dashboard">*@
+ 
+        <!-- Content
+        ================================================== -->
+        <div class="dashboard-content">
+            <!-- Titlebar -->
+            <div id="titlebar">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Profilim</h2>
+                        <!-- Breadcrumbs -->
+                        <nav id="breadcrumbs">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Dashboard</a></li>
+                                <li>Profilim</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Profile -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="dashboard-list-box margin-top-0">
+                        <h4 class="gray">Profile Details</h4>
+                        <div class="dashboard-list-box-static">                        
+                            <!-- Details -->
+                           
+                                @Html.AntiForgeryToken()
+@using (Html.BeginForm("Edit", "user", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="my-profile">
+        <div class="form-group">
+            <label>Your Name</label>
+            <input value="@user.username" type="text" name="username">
+            <label>Email</label>
+            <input value="@user.email" type="text" name="email">
+        </div>
+    </div>
+   <input type="hidden" name="id" value="@user.id" />
+    <button class="button margin-top-15">Save Changes</button>
+
+
+}
+
+  
+                         
+                        </div>
+                    </div>
+                </div>
+                <!-- Change Password -->
+                <div class="col-lg-6 col-md-12">
+                    @*<div class="dashboard-list-box margin-top-0">
+                        <h4 class="gray">Change Password</h4>
+                        <div class="dashboard-list-box-static">
+                             Change Password 
+                            <div class="my-profile">
+                                <label class="margin-top-0">Current Password</label>
+                                <input type="password">
+                                <label>New Password</label>
+                                <input type="password">
+                                <label>Confirm New Password</label>
+                                <input type="password">
+                                <button class="button margin-top-15">Change Password</button>
+                            </div>
+                        </div>
+                    </div>*@
+                </div>
+
+                <!-- Copyrights -->
+            </div>
+        </div>
+        <!-- Content / End -->
+
+    @*</div>*@
+    <!-- Dashboard / End -->
+
+<!-- Dashboard / End -->
+<!--wrapper ends-->
+

@@ -1,0 +1,139 @@
+﻿@using asc_general.Models
+@model dynamic
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string FB = "http://localhost:59178/Complex/Index/" + Model.foodId.id;
+}
+
+@section receptCss {
+
+    <link rel="stylesheet" href="~/Public/css/food.css">
+    <link rel="stylesheet" href="~/Public/css/recept.css">
+<link rel="stylesheet" href="~/Public/owlcarousel/owlCss/owl.carousel.min.css">
+<link rel="stylesheet" href="~/Public/owlcarousel/owlCss/owl.theme.default.min.css">
+
+}
+
+<div id="warpper-blog clearfix" class="warpper-blog section">
+    <div class="container">
+        <div class="row">
+            <!-- Strat Left Blog sidber -->
+            <div class="col-sm-12 col-md-8">
+                <div class="blog-warpper margin-bottom-30">
+                    <article class="inner-blog">
+                        <figure class="margin-bottom-30 image">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img class="img-responsive" src="~/Uploads/@Model.foodId.photo" alt="Recept Image">
+                                </div>
+                                <div class="col-md-6">
+                                </div>
+                            </div>
+                          
+                        </figure>
+                        <h2 class="post-title color-flamingo"><a href="#">@Model.foodId.name</a></h2>
+                        <div class="lower-part">
+                            <div class="post-text">
+                                <p> @Model.foodId.text</p>
+                            </div>
+                            @if (Session["user"] != null)
+                            {
+                                <div class="fb-comments" data-href="@FB" data-numposts="1" data-width="750"></div>
+                            }
+                        </div>
+                    </article>
+
+
+                    <!-- End Article -->
+                </div>
+            </div><!-- End Left Left Sidber -->
+            <!--  Strat Blog Right Sidber -->
+            <div class="col-sm-12 col-md-4">
+                <div class="blog-sidber">
+                    <div class="clearfix"></div>
+                    <!-- End Search Form-->
+                    <div class="recent-post">
+                        <div class="sections">
+                            <h2>Digərləri</h2>
+                        </div>
+                        <ul class="recent-post-list list-inline">
+                            @foreach (food_categories f in Model.categories)
+                            {
+                                <li>
+                                    <a href="@Url.Action("allrecepts","recepts",new { id = f.id })"><h3>@f.category_name</h3> <p> (@f.foods.Count) </p> </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- End Recent Post -->
+
+
+                </div>
+            </div><!-- End Left Left Sidber -->
+        </div><!-- End Row -->
+    </div>
+</div>
+
+<!-- Start owl carousel -->
+<div style="margin-bottom:80px;" class="slider">
+    <div class="container">
+                <h2>Digər Reseptlər</h2>
+        <div class="row">
+            <div class="col-md-8 col-sm-12 col-xs-12">
+                <div class="owl-carousel owl-theme">
+                    @foreach (food foooood in Model.allrecepts)
+                    {
+                        <div class="item">
+                            <a href=@Url.Action("index", "recepts", new { id = foooood.id , categoryID = foooood.category_id })>
+                               
+                                     <img src="~/Uploads/@foooood.photo" alt="@foooood.name" class="activeInCarousel" />
+                            </a>
+                        </div>
+                                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="fb-root"></div>
+<script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<!-- End owl carousel -->
+
+@section receptcarouselJS{
+    <script src="~/Public/owlcarousel/owlJs/jquery.min.js"></script>
+    <script src="~/Public/owlcarousel/owlJs/owl.carousel.js"></script>
+    <script>
+        $(document).ready(function () {
+            var owl = $('.owl-carousel');
+            owl.owlCarousel({
+                margin: 10,
+                nav: false,
+                loop: false,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 5
+                    }
+                }
+            });
+
+        });
+    </script>
+    }

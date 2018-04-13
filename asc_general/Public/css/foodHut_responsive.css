@@ -1,0 +1,225 @@
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .about .about-title{
+        padding: 0px 15px;
+        margin-top: 20px;
+    }
+
+    .our-menu .price-box .price .text-center {
+        padding: 15px;
+    }
+
+    .our-menu .price-box .price .text-center .icon-40 {
+        font-size: 30px;
+    }
+
+    .our-menu .price-box .price .text-center .margin-bottom-10 {
+        margin-bottom: 5px;
+    }
+
+    .our-menu .price-box .price .text-center p {
+        margin-bottom: 12px;
+    }
+
+    .our-menu .price-box .price .text-center .price-ret {
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .header .navbar-default .navbar-nav > li > a{
+        font-size: 12px;
+        letter-spacing: 0px;
+        padding: 22px 10px;
+    }
+
+    .header .navbar .navbar-photography h1{
+        width: 165px;
+    }
+
+    .text-center991{
+        text-align: center;
+    }
+
+    .reservation .form-box{
+        border-left: none;
+        padding-left: 0;
+        padding-top: 30px;
+    }
+
+    .margin-top-25-991{
+        margin-top: 25px;
+    }
+
+    .about .section-title .border span{
+        margin-left: -12px;
+    }
+
+    .about .section-title .border{
+        float: none;
+    }
+
+    .our-menu .price-box .price .text-center {
+        padding: 25px;
+    }
+    .sec-text {
+        text-align: center;
+    }
+    .counter.section {
+        padding: 100px 0 70px;
+    }
+    .counter .item-counter {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and  (max-width: 980px) {
+
+    .header .navbar .navbar-photography h1 {
+        padding: 0px;
+        margin-left: 0px;
+        width: 170px;
+    }
+
+    .header .navbar-default .navbar-nav > li > a {
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0px;
+        padding: 22px 12px;
+    }
+
+    .gallery .portfolio a .item_overlay .item_info .fa {
+        height: 42px;
+        line-height: 42px;
+        width: 42px;
+        font-size: 22px;
+    }
+
+    .gallery .portfolio a .item_overlay .item_info h4 {
+        font-size: 20px;
+        margin: 14px 0px;
+    }
+
+    .gallery .portfolio a .item_overlay .item_info p {
+        font-size: 15px;
+    }
+    .header .navbar .navbar-photography .logo-1 {
+        width: 180px;
+    }
+    .header .navbar .navbar-photography .logo-2 {
+        width: 180px;
+    }
+
+}
+
+@media screen and  (max-width: 900px) {
+    .carousel-control.right, .carousel-control.left {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .header .navbar .navbar-photography h1 {
+        margin-left: 15px;
+    }
+
+    .navbar-default .navbar-toggle:focus,
+    .navbar-default .navbar-toggle:hover,
+    .navbar-default .navbar-toggle:active{
+        background-color: #ef4836;
+    }
+
+    .navbar-default .navbar-toggle .icon-bar {
+        background-color: #e7e7e7;
+    }
+
+    .header .navbar-default {
+        background: rgba(0, 0, 0, 0.66);
+    }
+
+    .header .affix {
+        background-color: #FFF;
+    }
+
+    .header .navbar-default .navbar-nav > li > a {
+        padding: 10px;
+    }
+
+    .about .about-title {
+        padding: 70px 15px;
+    }
+
+    .portfolio-gallery .portfolio a {
+        margin: 10px auto 0px;
+    }
+
+    .reservation .form-box {
+        padding: 0px;
+    }
+
+    .form .form-group, #newsleter .form-group {
+        padding: 0px 15px;
+    }
+
+    .margin-top-re-25 {
+        margin-top: 25px;
+    }
+
+    #newsleter .form-group {
+        padding: 0px;
+    }
+
+    .warpper-blog .blog-comment .comment-sub {
+        padding-left: 0px;
+    }
+
+    .warpper-blog .comment-box .padding {
+        padding-right: 0px;
+    }
+
+
+    .warpper-blog .blog-comment .comment-list li .comment-meta {
+        margin-left: 0px;
+    }
+
+    .warpper-blog .blog-comment .comment-list li a {
+        margin: 20px 0px;
+    }
+
+    .warpper-blog .blog-comment .comment-list li .comment-meta {
+        margin: 0px;
+    }
+    .navbar-default .navbar-toggle {
+        border-color: #ababab;
+    }
+    .navbar-default .navbar-toggle .icon-bar {
+        background-color: #ababab;
+    }
+    .header .navbar-default .navbar-nav > li > a {
+        text-align: center;
+    }
+    .navbar-photography img {
+        margin-left: 15px;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    #newsleter > div:nth-child(1) > div
+
+    .form .form-group, #newsleter .form-group {
+        padding: 0px;
+    }
+
+    .blogs .section-head {
+        width: 80%;
+    }
+
+    .blogs .section-head h2 {
+        font-size: 32px;
+    }
+
+}

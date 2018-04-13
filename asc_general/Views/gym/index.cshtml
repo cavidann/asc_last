@@ -1,0 +1,186 @@
+﻿@using asc_general.Models;
+@model dynamic
+@{
+    ViewBag.Title = "Idman";
+    ViewBag.gym = "active";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section idmanCss {
+    <!-- StyleSheets school-->
+    <link rel="stylesheet" href="~/Public/school/css/vendor/bootstrap.css">
+    <link rel="stylesheet" href="~/Public/school/css/style.css">
+    <link rel="stylesheet" href="~/Public/school/css/icomoon.css">
+    <link rel="stylesheet" href="~/Public/school/css/main.css">
+    <link rel="stylesheet" href="~/Public/school/css/animate.css">
+    <link rel="stylesheet" href="~/Public/school/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Public/school/css/responsive.css">
+    <link rel="stylesheet" href="~/Public/school/css/transition.css">
+    <link rel="stylesheet" href="~/Public/bootstrap/css/bootstrap.css">
+
+    <link href="~/Public/css/themify-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Public/css/tehsil.css">
+    <link href="~/Public/css/idman.css" rel="stylesheet">
+}
+
+
+<section class="section white-bg" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="heading-container">
+                    <h6>İdman Haqqında</h6>
+                    @*<h3>İdman haqqında.</h3>*@
+                    <span class="partition"></span>
+                 
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-0 col-sm-8 col-sm-offset-2 text-center">
+                <img src="~/Public/images/about.jpg" alt="" />
+
+            </div>
+            <div class="col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod consectetur adipisicing elit, sed do adipisicing
+                    elit, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet, sed
+                    do eiusmod Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod consectetur adipisicing elit, sed do adipisicing
+                    elit, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet.
+                </p>
+                <h6>Lorem ipsum dolor sit amet</h6>
+                <p>
+                    Consectetur adipisicing elit, sed do adipisicing elit, Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod Lorem ipsum dolor sit amet, sed do eiusmod Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod Lorem ipsum dolor sit amet.
+                </p>
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =====================  About Section End  ===================== -->
+<!-- =====================  Classes Section Start  ===================== -->
+<section class="section white-bg" id="classes">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="heading-container">
+                    <h6>Növlər</h6>
+                    @*<h3>Növlər.</h3>*@
+                    <span class="partition"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <ul class="class-list">
+                    @foreach (gym_blog item in Model.gym)
+                    {
+                        <li>
+                            <div class="class-box">
+                                <img src="~/Uploads/@item.photo" alt="" style="height:220px;" />
+                                <div class="class-box-content">
+                                    <a href="@Url.Action("Index","gymblog",new { id = item.id })"><h2 style="color:#4CBCD4;">@item.title</h2> </a>
+                                    <p>@item.description</p>
+                                </div>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =====================  Classes Section End  ===================== -->
+<!-- =====================  Video Section Start  ===================== -->
+<section class="video-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="heading-container">
+                    @*<h6>Lorem Ipsum Dolor</h6>*@
+                    <h3>Lorem Ipsum</h3>
+                    <span class="partition"></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    @*</div>*@
+</section>
+<!-- =====================  Video Section End  ===================== -->
+<!-- =====================  Trainer Section Start  ===================== -->
+
+<section class="gallery-holder white-bg">
+
+    <!-- Main Heading -->
+    <div class="main-heading-holder section-padding-top">
+        <div class="main-heading">
+            <h2>Idman <strong>Kompleksləri</strong><span>Uşaqlarınız üçün ən yaxşı xidmət</span></h2>
+        </div>
+        <!-- Filter Tags List -->
+        <div class="filter-tags-holder">
+            <ul id="tg-filterbale-nav" class="option-set">
+                <li><a class="selected" data-filter="*" href="#">Hamısı</a></li>
+                @foreach (region region in Model.regions)
+                {
+                    <li>
+                        <a data-filter=".@region.id" href="#">@region.region1</a>
+                    </li>
+                }
+            </ul>
+        </div>
+        <!-- Filter Tags List -->
+    </div>
+    <!-- Main Heading -->
+    <!-- Gallery Grid -->
+    <div class="container">
+        <div class="row">
+            <div id="filter-masonry" class="gallery-masonry section-padding-top">
+                @foreach (our_complex idmanComplex in Model.gymComplex)
+                {
+                    <div class="masonry-grid col-md-3 col-xs-6 @idmanComplex.region_id r-full-width">
+                        <figure class="gallery-figure">
+                            <img class="img-responsive" style="height:190px" src="~/Uploads/@idmanComplex.photo" alt="@idmanComplex.complex_name">
+                            <figcaption class="gallery-hover">
+                                <div class="tc-display-table">
+                                    <div class="tc-display-table-cell">
+                                        <a class="fa fa-link" href="@Url.Action("index","complex",new { id = idmanComplex.id,regionID = idmanComplex.region_id})"></a>
+                                    </div>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <!-- Gallery Grid -->
+</section>
+
+@section tehsilJS{
+    <script src="~/Public/school/js/vendor/jquery.js"></script>
+    <script src="~/Public/school/js/vendor/bootstrap.js"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="~/Public/school/js/gmap3.min.js"></script>
+    <script src="~/Public/school/js/parallax.js"></script>
+    <script src="~/Public/school/js/contact-form.js"></script>
+    <script src="~/Public/school/js/owl-carousel.js"></script>
+    <script src="~/Public/school/js/countdown.js"></script>
+    <script src="~/Public/school/js/nstslider.js"></script>
+    <script src="~/Public/school/js/odometer.js"></script>
+    <script src="~/Public/school/js/classie.js"></script>
+    <script src="~/Public/school/js/bootstrap-select.js"></script>
+    <script src="~/Public/school/js/colorpicker.js"></script>
+    <script src="~/Public/school/js/appear.js"></script>
+    <script src="~/Public/school/js/prettyPhoto.js"></script>
+    <script src="~/Public/school/js/isotope.pkgd.js"></script>
+    <script src="~/Public/school/js/sticky.js"></script>
+    <script src="~/Public/school/js/wow-min.js"></script>
+    <script src="~/Public/school/js/main.js"></script>
+}

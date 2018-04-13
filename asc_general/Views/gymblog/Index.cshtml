@@ -1,0 +1,129 @@
+﻿@using System.Dynamic
+@using asc_general.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string FB = "http://localhost:59178/Complex/Index/" + Model.gym_blog.id;
+}
+
+@section cizgiCss{
+    <link rel="stylesheet" href="~/Public/css/cizgi.css">
+<link rel="stylesheet" href="~/Public/css/gymblog.css">
+}
+<div class="wrapper">
+    <!--pepe content starts-->
+
+    <div id="main">
+        <!--breadcrumb-section starts-->
+        <div class="breadcrumb-section" style="background:#c8e5f1;">
+            <div class="container">
+                <h1 style="color: #4CBCD4;">@Model.gym_blog.title</h1>
+                <div class="breadcrumb">
+                    <a href="@Url.Action("index","home")" style="color: #4CBCD4;">Home</a>
+                    <span class="fa fa-angle-double-right"></span>
+                    <span class="current" style="color: #4CBCD4;">@Model.gym_blog.title</span>
+                </div>
+            </div>
+        </div>
+        <!--breadcrumb-section ends-->
+        <!--container starts-->
+        <div class="kidsbg">
+            <div class="container">
+                <!--primary starts-->
+                <section id="primary" class="content-full-width">
+
+                    <div class="column dt-sc-one-half first">
+                        <article class="blog-entry">
+                            <div class="blog-entry-inner">
+                                <div class="entry-thumb">
+                                    <a href="#"><img src="~/Uploads/@Model.gym_blog.photo" alt="" title=""></a>
+                                </div>
+                                <div class="entry-details">
+                                    <div class="entry-title">
+                                        <h3><a href="#"style="color: #4CBCD4;">@Model.gym_blog.title </a></h3>
+                                    </div>
+                                    <!--entry-metadata ends-->
+                                    <div class="entry-body">
+                                        <p>
+                                            @Model.gym_blog.text
+                                        </p>
+                                    </div>
+
+                                    @if (Session["user"] != null)
+                                    {
+                                        <div class="fb-comments" data-href="@FB" data-numposts="1" data-width="750"></div>
+                                    }
+
+
+                                </div>
+                            </div>
+                            <iframe width="450" height="320" src="https://www.youtube.com/embed/@Model.gym_blog.video_url"
+                                    class="iiframe_margin pepemargin" frameborder="0" allowfullscreen></iframe>
+                            <div class="text-center prevnext">
+                                @if (Model.prev != null)
+                                {
+
+                                    <a href="@Url.Action("index","gymblog",new { id = Model.prev.id })"><i class="fa fa-angle-double-left" aria-hidden="true"></i>Öncə</a>
+                                }
+                                @if (Model.next != null)
+                                {
+
+                                    <a href="@Url.Action("index","gymblog",new { id = Model.next.id })">Sonra <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                }
+                            </div>
+                        </article>
+              
+                    </div>
+                  
+
+
+                    <!--  Strat Blog Right Sidber -->
+                    <div class="col-sm-12 col-md-3 float-right">
+                        <div class="blog-sidber">
+                            <div class="clearfix"></div>
+                            <!-- End Search Form-->
+                            <div class="recent-post">
+                                <div class="sections">
+                                    <h2>Digərləri</h2>
+                                </div>
+                                <ul class="recent-post-list list-inline">
+                                    @foreach (gym_blog g in Model.other_sports)
+                                    {
+                                        <li>
+                                            <a href="@Url.Action("index","gymblog",new { id =g.id})"><img src="~/Uploads/@g.photo" class="img-responsive" alt="blog01"></a>
+                                            <h6><a class="color-black" href="@Url.Action("index","gymblog",new { id =g.id})">@g.title </a></h6>
+                                        </li>
+                                    }
+
+
+                                </ul>
+                            </div>
+                            <div class="clearfix"></div>
+                            <!-- End Recent Post -->
+
+
+                        </div>
+                    </div><!-- End Left Left Sidber -->
+
+
+                </section>
+                <!--primary ends-->
+            </div>
+        </div>
+        <!--container ends-->
+
+    </div>
+    <!--pepe content ends-->
+
+</div>
+<div id="fb-root"></div>
+<script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+

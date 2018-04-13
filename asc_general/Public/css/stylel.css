@@ -1,0 +1,86 @@
+.section{
+padding:35px,0px!important;
+}
+.img_stabilizer{
+    width:100%; 
+    height:200px;
+    margin-bottom:20px
+}
+.thinker-wrap {
+    border: 3px solid #74a534;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom:40px;
+    margin-bottom:50px;
+}
+.thinker-image{
+    border-top-left-radius: 8px;
+    border-top-right-radius:8px; 
+    border-bottom: 3px solid #74a534;
+}
+.left-section.section,.middle-section.section,.right-section.section{
+        border: 3px solid #74a534!important;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.service-1 .section:hover {
+    background: #74a534;  
+}
+
+.hover:hover{
+   font-size:20px; 
+    text-shadow: 5px 5px 5px black;
+   transition: 2s;
+}
+body{
+    background:#a9cee8;
+}
+#classes,#trainer{
+  
+    background:  #a9cee8;
+}
+/*h3,h6,p{
+  color: blue;
+}*/
+div.trainer-box{
+    border-radius: 11px; 
+}
+.popup{
+    width: 50%:
+    
+}
+.blog .blog-post .contents-box .Continue-btn a{
+    color: #74a534!important;
+}
+.blog .blog-post .contents-box .Continue-btn:hover {
+    background: #74a534 !important;
+    color: white !important;
+}
+.blog .blog-post .contents-box .Continue-btn:hover a {
+    color: white !important;
+}
+.image .overly {
+    background: rgba(116, 165, 52, 0.7);
+  
+}
+    .image .overly .overly-icon .fa {
+        color: #74a534;
+    }
+h4 {
+    color: #74a534!important;
+}
+
+.overlay .overlay-inner .fa{
+    color:white!important;
+}
+.overlay .overlay-inner a:hover .fa {
+    color: #74a534 !important;
+}
+
+
+.heading-container h3 {
+    text-align: center;
+    color: #74a534;
+    margin-bottom: 55px;
+}

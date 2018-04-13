@@ -1,0 +1,181 @@
+﻿@using asc_general.Models;
+@model dynamic
+
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string FB = "http://localhost:59178/Complex/Index/" + Model.Blog.id;
+}
+@{
+    if (Model.Blog.blog_category.name == "təhsil")
+    {
+        @section foodblogCss {
+
+            <link rel="stylesheet" href="~/Public/css/food.css">
+            <link rel="stylesheet" href="~/Public/css/tehsilblog.css">
+        }
+    }
+    else if (Model.Blog.blog_category.name == "qida")
+    {
+        @section foodblogCss {
+            <link rel="stylesheet" href="~/Public/css/food.css" />
+        }
+    }
+ 
+    else if (Model.Blog.blog_category.name == "sağlamlıq")
+    {
+        <link rel="stylesheet" href="~/Public/css/food.css">
+        <link rel="stylesheet" href="~/Public/css/healthblog.css">
+    }
+
+}
+
+<!-- Strat Blog Details -->
+<div id="warpper-blog clearfix" class="warpper-blog section">
+    <div class="container">
+        <div class="row">
+            <!-- Strat Left Blog sidber -->
+            <div class="col-sm-12 col-md-8">
+                <div class="blog-warpper margin-bottom-30">
+                    <article class="inner-blog">
+                        <figure class="margin-bottom-30 image">
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <img class="img-responsive" src="~/Uploads/@Model.Blog.photo" alt="Blog Image">                                    
+                                    
+                                        @{
+                                            asc_general.Models.user thisUser = (asc_general.Models.user)(Session["user"]);
+
+                                            if (Session["user"] == null)
+                                            {
+                                                @*<i class="fa fa-heart-o fa-lg text-danger"></i><span>(@Model.Blog.mylikes)</span>*@
+                                            }
+                                            else if (new List<dynamic>(Model.likes).FirstOrDefault(a => a.user_id == thisUser.id && a.blog_id == Model.Blog.id) != null || Ajax.ViewBag.liked == true)
+                                            {
+                                                <a href="javascript:void(0)" class="unlike" data-id="@Model.Blog.id"><i class="fa fa-heart fa-lg text-danger"></i><span>@Model.Blog.mylikes Likes</span></a>
+                                            }
+                                            else
+                                            {
+                                                <a href="javascript:void(0)" class="like" data-id="@Model.Blog.id"><i class="fa fa-heart-o fa-lg"></i><span>(@Model.Blog.mylikes)</span></a>
+                                            }
+                                        }
+                                    
+
+
+
+                                </div>
+                                <div class="col-md-5">
+                                </div>
+                            </div>
+                        </figure>
+                        <h2 class="post-title color-flamingo"><a href="@Url.Action("index","singleblog",new { id = Model.Blog.id})">@Model.Blog.title</a></h2>
+                        <div class="lower-part">
+                            <div class="post-text">
+                                <p> @Model.Blog.text</p>
+                            </div>
+                            @if (Session["user"] != null)
+                            {
+                                <div class="fb-comments" data-href="@FB" data-numposts="1" data-width="750"></div>
+                            }
+                          
+                        </div>
+                    </article>
+
+                    <div class="text-center prevnext">
+                        @if (Model.prev != null)
+                        {
+
+                            <a href="@Url.Action("index","singleblog",new { id = Model.prev.id })"><i class="fa fa-angle-double-left" aria-hidden="true"></i>Öncə</a>
+                        }
+                        @if (Model.next != null)
+                        {
+
+                            <a href="@Url.Action("index","singleblog",new { id = Model.next.id })">Sonra <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                        }
+                    </div>
+
+                    <!-- End Article -->
+                </div>
+            </div><!-- End Left Left Sidber -->
+            <!--  Strat Blog Right Sidber -->
+            <div class="col-sm-12 col-md-4">
+                <div class="blog-sidber">
+                    <div class="clearf
+                         ix"></div>
+                    <!-- End Search Form-->
+                    <div class="recent-post">
+                        <div class="sections">
+                            <h2>Digər Məqalələr</h2>
+                        </div>
+                        <ul class="recent-post-list list-inline">
+                            @foreach (blog blg in Model.otherblogs)
+                            {
+                                <li>
+                                    <a href="@Url.Action("index","singleblog",new { id =blg.id})"><img src="~/Uploads/@blg.photo" class="img-responsive" alt="blog01"></a>
+                                    <h6><a class="color-black" href="#">@blg.title </a></h6>
+                                    <span class="fa fa-clock-o color"></span> &nbsp;@Convert.ToString(string.Format("{0:dd/MM/yyyy}", blg.date))
+                                </li>
+                            }
+
+
+                        </ul>
+
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- End Recent Post -->
+
+
+                </div>
+            </div><!-- End Left Left Sidber -->
+        </div><!-- End Row -->
+    </div>
+</div>
+<div id="fb-root"></div>
+<script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+<!-- End Blog Details -->
+@section foodblogJs {
+    <script src="~/Public/school/js/vendor/jquery.js"></script>
+    <script type="text/javascript" src="~/Public/js/food.js"></script>
+    <script>
+       
+        //do the ajax call
+        jQuery(document).on("click", "a.like", function () {
+          
+            var id = jQuery(this).data("id");
+                var link = "/SingleBlog/LikeThis/" + id;
+                var a = jQuery(this);
+                jQuery.ajax({
+                    type: "GET",
+                    url: link,
+                    success: function (result) {
+                        a.html('<i class="fa fa-heart fa-lg text-danger"></i> (' + result + ')').removeClass("like").addClass("unlike");
+                    }
+                });
+        })
+        jQuery(document).on("click", "a.unlike", function () {
+      
+            var id = jQuery(this).data("id");
+                    var link = "/SingleBlog/UnlikeThis/" + id;
+                    var a = jQuery(this);
+                    jQuery.ajax({
+                        type: "GET",
+                        url: link,
+                        success: function (result) {
+                            a.html('<i class="fa fa-heart-o fa-lg"></i> (' + result + ')').removeClass("unlike").addClass("like");;
+                        }
+                    });
+                })
+
+    </script>
+
+}
+

@@ -1,0 +1,34 @@
+.iiframe_margin {
+    margin-bottom:50px;
+}
+.entry-title h3 a:hover {
+    color: #4CBCD4;
+    text-decoration: none;
+}
+.sections h2 {
+    color: #4CBCD4;
+}
+.blog-sidber .recent-post ul > li {
+    border-bottom: 1px solid #4CBCD4;
+    display: block;
+    margin-bottom: 20px;
+    margin-left: 5px;
+    overflow: hidden;
+    padding: 10px 0px 20px;
+    position: relative;
+}
+    .blog-sidber .recent-post ul > li > h6 > a:hover,
+    .blog-sidber .category .cate-list > li > a:hover {
+        color: #4CBCD4;
+        text-decoration: none;
+    }
+.prevnext a {
+    color: #5c5c5c;
+    font-size: 25px;
+    margin-left: 5px;
+}
+.prevnext a:hover {
+    color: #5c5c5c;
+    text-decoration:none;
+    font-size: 20px;
+}

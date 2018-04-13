@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ascModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adminname" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
+    <Property Name="image" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="blog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="255" />
+    <Property Name="photo" Type="nvarchar(max)" />
+    <Property Name="date" Type="datetime" />
+    <Property Name="category_id" Type="int" />
+    <Property Name="text" Type="nvarchar(max)" />
+    <Property Name="mylikes" Type="int" />
+  </EntityType>
+  <EntityType Name="blog_category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="cartoon">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="255" />
+    <Property Name="photo" Type="nvarchar(max)" />
+    <Property Name="text" Type="nvarchar(max)" />
+    <Property Name="video_url" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="food_categories">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sira" Type="int" Nullable="false" />
+    <Property Name="category_name" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="foods">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" />
+    <Property Name="category_id" Type="int" />
+    <Property Name="text" Type="text" />
+    <Property Name="photo" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="gym_blog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="255" />
+    <Property Name="photo" Type="nvarchar(max)" />
+    <Property Name="description" Type="nvarchar" MaxLength="255" />
+    <Property Name="text" Type="nvarchar(max)" />
+    <Property Name="video_url" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="health_staff">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" />
+    <Property Name="profession" Type="nvarchar" MaxLength="255" />
+    <Property Name="photo" Type="nvarchar(max)" />
+    <Property Name="text_about" Type="nvarchar(max)" />
+    <Property Name="instagram" Type="nvarchar" MaxLength="255" />
+    <Property Name="facebook" Type="nvarchar" MaxLength="255" />
+    <Property Name="phone" Type="nvarchar" MaxLength="255" />
+    <Property Name="email" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="lettrs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="likes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="blog_id" Type="int" />
+    <Property Name="liked" Type="bit" />
+  </EntityType>
+  <EntityType Name="names">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" />
+    <Property Name="lettrs_id" Type="int" />
+    <Property Name="decription" Type="nvarchar(max)" />
+    <Property Name="type" Type="bit" />
+  </EntityType>
+  <EntityType Name="our_complex">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="region_id" Type="int" />
+    <Property Name="complex_name" Type="nvarchar(max)" />
+    <Property Name="address" Type="nvarchar(max)" />
+    <Property Name="phone" Type="nvarchar(max)" />
+    <Property Name="facebook" Type="nvarchar(max)" />
+    <Property Name="instagram" Type="nvarchar(max)" />
+    <Property Name="edu_or_gym" Type="bit" />
+    <Property Name="photo" Type="nvarchar(max)" />
+    <Property Name="text" Type="nvarchar(max)" />
+    <Property Name="map_url" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="regions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="region" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="255" />
+    <Property Name="password1" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_blog_blog_category">
+    <End Role="blog_category" Type="Self.blog_category" Multiplicity="0..1" />
+    <End Role="blog" Type="Self.blog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="blog_category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="blog">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_foods_food_categories">
+    <End Role="food_categories" Type="Self.food_categories" Multiplicity="0..1" />
+    <End Role="foods" Type="Self.foods" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="food_categories">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="foods">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_likes_blog">
+    <End Role="blog" Type="Self.blog" Multiplicity="0..1" />
+    <End Role="likes" Type="Self.likes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="blog">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="likes">
+        <PropertyRef Name="blog_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_likes_user">
+    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="likes" Type="Self.likes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="likes">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_names_lettrs">
+    <End Role="lettrs" Type="Self.lettrs" Multiplicity="0..1" />
+    <End Role="names" Type="Self.names" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lettrs">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="names">
+        <PropertyRef Name="lettrs_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_our_complex_regions">
+    <End Role="regions" Type="Self.regions" Multiplicity="0..1" />
+    <End Role="our_complex" Type="Self.our_complex" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="regions">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="our_complex">
+        <PropertyRef Name="region_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ascModelStoreContainer">
+    <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="blog" EntityType="Self.blog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="blog_category" EntityType="Self.blog_category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cartoon" EntityType="Self.cartoon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="food_categories" EntityType="Self.food_categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="foods" EntityType="Self.foods" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="gym_blog" EntityType="Self.gym_blog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="health_staff" EntityType="Self.health_staff" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="lettrs" EntityType="Self.lettrs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="likes" EntityType="Self.likes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="names" EntityType="Self.names" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="our_complex" EntityType="Self.our_complex" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="regions" EntityType="Self.regions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_blog_blog_category" Association="Self.FK_blog_blog_category">
+      <End Role="blog_category" EntitySet="blog_category" />
+      <End Role="blog" EntitySet="blog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_foods_food_categories" Association="Self.FK_foods_food_categories">
+      <End Role="food_categories" EntitySet="food_categories" />
+      <End Role="foods" EntitySet="foods" />
+    </AssociationSet>
+    <AssociationSet Name="FK_likes_blog" Association="Self.FK_likes_blog">
+      <End Role="blog" EntitySet="blog" />
+      <End Role="likes" EntitySet="likes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_likes_user" Association="Self.FK_likes_user">
+      <End Role="user" EntitySet="user" />
+      <End Role="likes" EntitySet="likes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_names_lettrs" Association="Self.FK_names_lettrs">
+      <End Role="lettrs" EntitySet="lettrs" />
+      <End Role="names" EntitySet="names" />
+    </AssociationSet>
+    <AssociationSet Name="FK_our_complex_regions" Association="Self.FK_our_complex_regions">
+      <End Role="regions" EntitySet="regions" />
+      <End Role="our_complex" EntitySet="our_complex" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

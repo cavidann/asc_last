@@ -1,0 +1,203 @@
+﻿@using asc_general.Models
+@model dynamic
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string FB = "http://localhost:59178/Complex/Index/" + Model.complexId.id;
+}
+
+@section complexCss {
+    <!-- Owl Stylesheets -->
+    <link rel="stylesheet" href="~/Public/owlcarousel/owlCss/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Public/owlcarousel/owlCss/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/Public/css/food.css">
+    <link rel="stylesheet" href="~/Public/css/complex.css">
+
+    @{
+        if (Model.complexId.edu_or_gym == true)
+        {
+            <link rel="stylesheet" href="~/Public/css/eduComplexCss.css">
+        }
+        else
+        {
+            <link rel="stylesheet" href="~/Public/css/gymComplexCss.css">
+        }
+    }
+}
+
+
+<div id="warpper-blog clearfix" class="warpper-blog section">
+    <div class="container">
+        <div class="row">
+            <!-- Strat Left Blog sidber -->
+            <div class="col-sm-12 col-md-8">
+                <div class="blog-warpper margin-bottom-30">
+                    <article class="inner-blog">
+                        <figure class="margin-bottom-30 image">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <img class="img-responsive" src="~/Uploads/@Model.complexId.photo" alt="Blog Image">
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="about-complex">
+                                        <h2 class="post-title"><a>@Model.complexId.complex_name</a></h2>
+                                        <h4>
+                                            <i class="fa fa-mobile" aria-hidden="true"></i>&nbsp;
+                                            @Model.complexId.phone
+                                        </h4>
+                                        <h4>
+                                            <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;
+                                            @Model.complexId.address
+                                        </h4>
+                                        <ul>
+                                            <li>
+                                                <a href="@Model.complexId.facebook"> <i class="fa fa-facebook" aria-hidden="true"> </i> </a>
+                                            </li>
+                                            <li>
+                                                <a href="@Model.complexId.instagram"> <i class="fa fa-instagram" aria-hidden="true"> </i> </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </figure>
+
+                        <div class="lower-part">
+                            <div class="post-text">
+                                <p> @Model.complexId.text</p>
+                            </div>
+
+                            @if (Session["user"] != null)
+                            {
+                                <div class="fb-comments" data-href="@FB" data-numposts="1" data-width="750"></div>
+                            }
+
+                            <iframe src="@Model.complexId.map_url" width="800" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+
+                    </article>
+             
+
+                </div>
+            </div>
+            <!-- End Left Left Sidber -->
+            <!--  Strat Blog Right Sidber -->
+            <div class="col-sm-12 col-md-4 col-xs-12">
+                <div class="blog-sidber">
+                    <div class="clearfix"></div>
+                    <!-- End Search Form-->
+                    <div class="recent-post">
+                        <div class="sections">
+                            <h2>Rayonlar</h2>
+                        </div>
+                        <ul class="recent-post-list list-inline">
+                            @foreach (region region in Model.regions)
+                            {
+                                if (region.our_complex.Count(c => c.edu_or_gym == Model.complexId.edu_or_gym) != 0)
+                                {
+                                    <li>
+                                        <a href=@Url.Action("allComplex", "complex", new { id = region.id, complexType = Model.complexId.edu_or_gym,page = 1})>
+                                            <h3>@region.region1</h3>
+                                            @{
+                                                if (Model.complexId.edu_or_gym == true)
+                                                {
+                                                    <p> (@region.our_complex.Where(e => e.edu_or_gym == true).Count()) </p>
+                                                }
+                                                else
+                                                {
+                                                    <p> (@region.our_complex.Where(e => e.edu_or_gym == false).Count()) </p>
+                                                }
+                                            }
+                                        </a>
+                                    </li>
+                                                    }
+                                                }
+                        </ul>
+
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- End Recent Post -->
+                </div>
+            </div><!-- End Left Left Sidber -->
+        </div><!-- End Row -->
+    </div>
+</div>
+<!-- Start owl carousel -->
+<div class="slider">
+    <div class="container">
+        @{
+            if (Model.complexId.edu_or_gym == true)
+            {
+                <h2>Digər bağçalar</h2>
+            }
+            else
+            {
+                <h2>Digər idman kompleksləri</h2>
+            }
+        }
+        <div class="row">
+            <div class="col-md-8 col-sm-12 col-xs-12">
+                <div class="owl-carousel owl-theme">
+                    @foreach (our_complex complex in Model.allKindergarten)
+                    {
+                        <div class="item">
+                            <a href=@Url.Action("index", "complex", new { id = complex.id ,regionID = complex.region_id })>
+                                @{
+                                    if (complex.id == Model.complexId.id)
+                                    {
+                                        <img src="~/Uploads/@complex.photo" alt="@complex.complex_name" class="activeInCarousel" />
+                                    }
+                                    else
+                                    {
+                                        <img src="~/Uploads/@complex.photo" alt="@complex.complex_name" />
+                                    }
+                                }
+                            </a>
+                        </div>
+                                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="fb-root"></div>
+<script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<!-- End owl carousel -->
+
+@section carouselJS{
+    <script src="~/Public/owlcarousel/owlJs/jquery.min.js"></script>
+    <script src="~/Public/owlcarousel/owlJs/owl.carousel.js"></script>
+    <script>
+        $(document).ready(function () {
+            var owl = $('.owl-carousel');
+            owl.owlCarousel({
+                margin: 10,
+                nav: false,
+                loop: false,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 5
+                    }
+                }
+            });
+
+        });
+    </script>
+}

@@ -1,0 +1,94 @@
+﻿
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+    <link rel="stylesheet" href="~/Public/css/bootstrap.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css'>
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300'>
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,700,300'>
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+
+
+
+    <link rel="stylesheet" href="~/Public/css/registerr.css">
+
+</head>
+<body>
+    <div class="signup__container">
+        <div class="container__child signup__thumbnail">
+            <div class="thumbnail__links">
+            </div>
+            <div class="signup__overlay"></div>
+        </div>
+        <div class="container__child signup__form">
+            <form action="@Url.Action("register","user")">
+                <fieldset>
+                    <div class="form-group">
+                        <label for="username">İstifadəçi Adı</label>
+                        <input class="form-control input" type="text" data-validation="required" name="username" id="reg_username" placeholder="user.name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input class="form-control input" data-validation="server email" id="reg_email" data-validation-url="@Url.Action("checkEmail","user")" type="email" name="email" placeholder="user.name@example.com"  />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Şifrə</label>
+                        <input class="form-control input" type="password" data-validation="strength" data-validation-strength="2" name="password" id="reg_password" placeholder="********" />
+                    </div>
+                    <div class="form-group">
+                        <label for="passwordRepeat">Təkrar Şifrə</label>
+                        <input class="form-control input" type="password" name="password1" id="reg_password1" placeholder="********"  />
+                    </div>
+                    <div class="m-t-lg">
+                        <ul class="list-inline margintop">
+                            <li>
+                                <button type="submit" id="register" class="btn-type1 btn btn--form">Qeydiyyat</button>
+                                <div id="message-reg" style="color:red;"></div>
+                                @*<input class="btn btn--form" type="submit" value="Qeydiyyat" />*@
+                            </li>
+                            <li>
+                                <a class="signup__link" href="@Url.Action("Login","user")"> Artıq qeydiyyatdan keçmişəm</a>
+                            </li>
+                        </ul>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+        @*<form action="@Url.Action("register","user")">
+            <fieldset>
+                <input type="text" data-validation="required" name="username" id="reg_username" placeholder="Username" class="input">
+                <input data-validation="server email" id="reg_email" data-validation-url="@Url.Action("checkEmail","user")" type="email" placeholder="Email" class="input" name="email" />
+                <input type="password" data-validation="strength" data-validation-strength="2" name="password" id="reg_password" placeholder="Password" class="input">
+                <button type="submit" id="register" class="btn-type1">Register</button>
+                <div id="message-reg"></div>
+
+            </fieldset>
+
+        </form>*@
+
+    <script src="~/Public/js/jquery.js"></script>    
+    <script src="~/Public/js/registermain.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+
+
+</body>
+<!-- 
+
+
+
+ include jQuery -->
+
+</html>

@@ -1,0 +1,275 @@
+$yellow:#ffce72;
+
+.education_slider{
+    clear: both;
+    color: white;
+}
+
+.carousel-control.left{
+    background-image:none;
+}
+
+.carousel-control.right{
+    background-image:none;
+}
+
+.carousel-inner > .item > img{
+    width: 100%;
+    filter: brightness(20%);
+}
+
+.carousel-indicators .active{
+    margin: 1px;
+    width: 17px;
+    height: 17px;
+    background: $yellow;
+}
+
+.carousel-indicators li{
+    width: 14px;
+    height: 14px;
+    border: 2px solid $yellow;
+}
+
+.carousel-caption{
+    top: 35%;
+    left:15%;
+    right: 15%;
+    padding: 0;
+
+    h1{
+        font-family: 'Bubblegum Sans', cursive;
+        font-size: 90px;
+        text-transform: uppercase;
+        margin-bottom: 0px;
+        color: white;
+        white-space: nowrap;
+        span{
+            color:$yellow;
+        }
+    }  
+    p{
+        display: none;
+    }   
+}
+
+.carousel-indicators {
+    bottom: 20px;
+}
+
+.gallery-holder .main-heading-holder{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.about-school{
+    padding: 40px 0;
+    background: white;
+
+    h2{
+        font-family: 'Bubblegum Sans', cursive;
+    }
+    strong{
+        color:$yellow;
+    }
+    span{
+        color:$yellow;
+    }
+}
+
+.main-heading{
+    h2{
+        font-family: 'Bubblegum Sans', cursive;
+        font-size: 50px;
+    }
+    strong{
+        color:$yellow;
+    }
+    span{
+        color:$yellow;
+        margin-top: 20px;
+    }
+}
+
+.section-padding-top {
+    padding: 50px 0 40px ;
+}
+
+
+.filter-tags-holder ul li a{
+    padding: 5px 15px;
+
+    &:focus{
+        text-decoration: none;
+    }
+}
+
+.filter-tags-holder ul li a.selected{
+    border-color: $yellow
+}
+
+.gallery-hover{
+    background-color: $yellow
+}
+
+.carousel-inner{
+    .item{
+        height: 100vh;
+    }
+}  
+
+.color-yellow{
+    color:$yellow;
+}
+
+.section-title h4{
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.blog{
+    background: white;
+    padding: 80px 0px;
+}
+
+.blog .blog-post .contents-box .Continue-btn:hover{
+    background: $yellow;
+}
+
+.image .overly{
+    background: rgba(255,206,114,.7);
+    .overly-icon .fa{
+        color:$yellow;
+    }
+}
+
+.warpper-blog{
+    padding: 60px 0px;
+    .inner-blog{
+        .image .overly{
+            background: rgba(255, 206, 114, 0.7)
+        }
+
+        h2.post-title{
+            margin: 0;
+             a{
+                color: $yellow;
+                font-family: 'Bubblegum Sans', cursive;
+                font-size: 35px;
+            }
+        }
+        
+    }  
+} 
+
+.fa-li{
+    top: 0;
+}
+
+@media only screen and (min-width: 540px){
+    .carousel-caption{
+        p{
+            font-size: 16px;
+            line-height: 27px;
+            display: block;        
+        }   
+    }
+}
+
+
+@media only screen and (min-width: 481px){
+    .about-school{
+        h2{
+            font-size: 45px;
+        }
+    }    
+}
+
+
+@media only screen and (max-width: 887px){
+    .carousel-inner{
+        .item{
+            height: 100%;
+        }
+    }  
+}
+
+@media screen and (max-width: 991px){
+    .margin-bottom-30-991 {
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 1240px){
+    .carousel-caption{
+        h1 {
+            font-size: 55px;;
+            margin-bottom: 20px;
+        }
+        p{
+            font-size: 15px;
+            line-height: 23px;
+        }
+    }     
+}
+
+@media only screen and (max-width: 960px){
+    .carousel-caption{
+        h1 {
+            font-size: 43px;
+            margin-bottom: 15px;
+            white-space: pre-wrap;
+            line-height: 1;
+        }
+    }     
+}
+
+@media only screen and (max-width: 767px){
+    .carousel-caption {
+        top: 30%;
+    }
+    .blog {
+        padding: 25px 0px;
+    }     
+}
+
+@media only screen and (max-width: 679px){
+    .filter-tags-holder ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        li{
+            margin: 0 !important;
+            padding-bottom: 0 ;
+        }
+    }
+    .gallery-holder .main-heading{
+        h2{
+            margin: 0;
+        }
+    }
+}
+
+@media only screen and (max-width: 425px){
+    .carousel-indicators{
+        display: none;
+    }
+    .carousel-caption {
+        top: 40%;
+    }
+    .carousel-caption {
+        h1{
+            white-space: pre-wrap;
+            line-height: 1;
+            font-size: 35px;
+            margin-bottom: 0;
+        }
+        p{
+            display: none;
+        }
+    }   
+    .main-heading h2{
+        font-size: 40px; 
+    }
+     
+}

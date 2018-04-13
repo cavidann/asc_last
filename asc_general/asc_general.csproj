@@ -1,0 +1,1564 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{39906420-FA57-4EEA-837B-E692B72876B8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>asc_general</RootNamespace>
+    <AssemblyName>asc_general</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admins\AdminsAreaRegistration.cs" />
+    <Compile Include="Areas\Admins\Controllers\adminController.cs" />
+    <Compile Include="Areas\Admins\Controllers\blogsCrudController.cs" />
+    <Compile Include="Areas\Admins\Controllers\blog_categoryCrudController.cs" />
+    <Compile Include="Areas\Admins\Controllers\cartoonsCrudController.cs" />
+    <Compile Include="Areas\Admins\Controllers\CrudLettrsController.cs" />
+    <Compile Include="Areas\Admins\Controllers\CrudNamesController.cs" />
+    <Compile Include="Areas\Admins\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\Admins\Controllers\foodsCrudController.cs" />
+    <Compile Include="Areas\Admins\Controllers\food_categoriesCrudController.cs" />
+    <Compile Include="Areas\Admins\Controllers\gym_blogController.cs" />
+    <Compile Include="Areas\Admins\Controllers\health_staffController.cs" />
+    <Compile Include="Areas\Admins\Controllers\Health_Staff_CrudController.cs" />
+    <Compile Include="Areas\Admins\Controllers\our_complex_CrudController.cs" />
+    <Compile Include="Areas\Admins\Controllers\regions_CrudController.cs" />
+    <Compile Include="Controllers\CartoonController.cs" />
+    <Compile Include="Controllers\cartoon_blogController.cs" />
+    <Compile Include="Controllers\ComplexController.cs" />
+    <Compile Include="Controllers\Dr_ProfileController.cs" />
+    <Compile Include="Controllers\EducationController.cs" />
+    <Compile Include="Controllers\FoodController.cs" />
+    <Compile Include="Controllers\gymController.cs" />
+    <Compile Include="Controllers\gymblogController.cs" />
+    <Compile Include="Controllers\healthController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LettersController.cs" />
+    <Compile Include="Controllers\LikedController.cs" />
+    <Compile Include="Controllers\MeqaleController.cs" />
+    <Compile Include="Controllers\NamesController.cs" />
+    <Compile Include="Controllers\ReceptsController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\SIngleBlogController.cs" />
+    <Compile Include="Controllers\userController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\admin.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\blog.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\blog_category.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cartoon.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\food.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\food_categories.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\gym_blog.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\health_staff.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\lettr.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\like.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Models.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Models.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Models.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Models.Designer.cs">
+      <DependentUpon>Models.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Models1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Models.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\name.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\our_complex.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\region.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\user.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\Models.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Models.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Models.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Models.cs</LastGenOutput>
+    </Content>
+    <Content Include="Public\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Public\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Public\bootstrap\css\bootstrap.css" />
+    <Content Include="Public\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Public\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Public\bootstrap\js\bootstrap.js" />
+    <Content Include="Public\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Public\bootstrap\js\npm.js" />
+    <Content Include="Public\bower_components\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Public\bower_components\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Public\bower_components\bootstrap\dist\js\npm.js" />
+    <Content Include="Public\bower_components\jquery\AUTHORS.txt" />
+    <Content Include="Public\bower_components\jquery\dist\core.js" />
+    <Content Include="Public\bower_components\jquery\dist\jquery.js" />
+    <Content Include="Public\bower_components\jquery\dist\jquery.min.js" />
+    <Content Include="Public\bower_components\jquery\dist\jquery.slim.js" />
+    <Content Include="Public\bower_components\jquery\dist\jquery.slim.min.js" />
+    <Content Include="Public\bower_components\jquery\external\sizzle\dist\sizzle.js" />
+    <Content Include="Public\bower_components\jquery\external\sizzle\dist\sizzle.min.js" />
+    <Content Include="Public\bower_components\jquery\external\sizzle\LICENSE.txt" />
+    <Content Include="Public\bower_components\jquery\LICENSE.txt" />
+    <Content Include="Public\bower_components\jquery\src\ajax.js" />
+    <Content Include="Public\bower_components\jquery\src\ajax\jsonp.js" />
+    <Content Include="Public\bower_components\jquery\src\ajax\load.js" />
+    <Content Include="Public\bower_components\jquery\src\ajax\parseXML.js" />
+    <Content Include="Public\bower_components\jquery\src\ajax\script.js" />
+    <Content Include="Public\bower_components\jquery\src\ajax\var\location.js" />
+    <Content Include="Public\bower_components\jquery\src\ajax\var\nonce.js" />
+    <Content Include="Public\bower_components\jquery\src\ajax\var\rquery.js" />
+    <Content Include="Public\bower_components\jquery\src\ajax\xhr.js" />
+    <Content Include="Public\bower_components\jquery\src\attributes.js" />
+    <Content Include="Public\bower_components\jquery\src\attributes\attr.js" />
+    <Content Include="Public\bower_components\jquery\src\attributes\classes.js" />
+    <Content Include="Public\bower_components\jquery\src\attributes\prop.js" />
+    <Content Include="Public\bower_components\jquery\src\attributes\support.js" />
+    <Content Include="Public\bower_components\jquery\src\attributes\val.js" />
+    <Content Include="Public\bower_components\jquery\src\callbacks.js" />
+    <Content Include="Public\bower_components\jquery\src\core.js" />
+    <Content Include="Public\bower_components\jquery\src\core\access.js" />
+    <Content Include="Public\bower_components\jquery\src\core\DOMEval.js" />
+    <Content Include="Public\bower_components\jquery\src\core\init.js" />
+    <Content Include="Public\bower_components\jquery\src\core\nodeName.js" />
+    <Content Include="Public\bower_components\jquery\src\core\parseHTML.js" />
+    <Content Include="Public\bower_components\jquery\src\core\ready-no-deferred.js" />
+    <Content Include="Public\bower_components\jquery\src\core\ready.js" />
+    <Content Include="Public\bower_components\jquery\src\core\readyException.js" />
+    <Content Include="Public\bower_components\jquery\src\core\stripAndCollapse.js" />
+    <Content Include="Public\bower_components\jquery\src\core\support.js" />
+    <Content Include="Public\bower_components\jquery\src\core\var\rsingleTag.js" />
+    <Content Include="Public\bower_components\jquery\src\css.js" />
+    <Content Include="Public\bower_components\jquery\src\css\addGetHookIf.js" />
+    <Content Include="Public\bower_components\jquery\src\css\adjustCSS.js" />
+    <Content Include="Public\bower_components\jquery\src\css\curCSS.js" />
+    <Content Include="Public\bower_components\jquery\src\css\hiddenVisibleSelectors.js" />
+    <Content Include="Public\bower_components\jquery\src\css\showHide.js" />
+    <Content Include="Public\bower_components\jquery\src\css\support.js" />
+    <Content Include="Public\bower_components\jquery\src\css\var\cssExpand.js" />
+    <Content Include="Public\bower_components\jquery\src\css\var\getStyles.js" />
+    <Content Include="Public\bower_components\jquery\src\css\var\isHiddenWithinTree.js" />
+    <Content Include="Public\bower_components\jquery\src\css\var\rmargin.js" />
+    <Content Include="Public\bower_components\jquery\src\css\var\rnumnonpx.js" />
+    <Content Include="Public\bower_components\jquery\src\css\var\swap.js" />
+    <Content Include="Public\bower_components\jquery\src\data.js" />
+    <Content Include="Public\bower_components\jquery\src\data\Data.js" />
+    <Content Include="Public\bower_components\jquery\src\data\var\acceptData.js" />
+    <Content Include="Public\bower_components\jquery\src\data\var\dataPriv.js" />
+    <Content Include="Public\bower_components\jquery\src\data\var\dataUser.js" />
+    <Content Include="Public\bower_components\jquery\src\deferred.js" />
+    <Content Include="Public\bower_components\jquery\src\deferred\exceptionHook.js" />
+    <Content Include="Public\bower_components\jquery\src\deprecated.js" />
+    <Content Include="Public\bower_components\jquery\src\dimensions.js" />
+    <Content Include="Public\bower_components\jquery\src\effects.js" />
+    <Content Include="Public\bower_components\jquery\src\effects\animatedSelector.js" />
+    <Content Include="Public\bower_components\jquery\src\effects\Tween.js" />
+    <Content Include="Public\bower_components\jquery\src\event.js" />
+    <Content Include="Public\bower_components\jquery\src\event\ajax.js" />
+    <Content Include="Public\bower_components\jquery\src\event\alias.js" />
+    <Content Include="Public\bower_components\jquery\src\event\focusin.js" />
+    <Content Include="Public\bower_components\jquery\src\event\support.js" />
+    <Content Include="Public\bower_components\jquery\src\event\trigger.js" />
+    <Content Include="Public\bower_components\jquery\src\exports\amd.js" />
+    <Content Include="Public\bower_components\jquery\src\exports\global.js" />
+    <Content Include="Public\bower_components\jquery\src\jquery.js" />
+    <Content Include="Public\bower_components\jquery\src\manipulation.js" />
+    <Content Include="Public\bower_components\jquery\src\manipulation\buildFragment.js" />
+    <Content Include="Public\bower_components\jquery\src\manipulation\getAll.js" />
+    <Content Include="Public\bower_components\jquery\src\manipulation\setGlobalEval.js" />
+    <Content Include="Public\bower_components\jquery\src\manipulation\support.js" />
+    <Content Include="Public\bower_components\jquery\src\manipulation\var\rcheckableType.js" />
+    <Content Include="Public\bower_components\jquery\src\manipulation\var\rscriptType.js" />
+    <Content Include="Public\bower_components\jquery\src\manipulation\var\rtagName.js" />
+    <Content Include="Public\bower_components\jquery\src\manipulation\wrapMap.js" />
+    <Content Include="Public\bower_components\jquery\src\manipulation\_evalUrl.js" />
+    <Content Include="Public\bower_components\jquery\src\offset.js" />
+    <Content Include="Public\bower_components\jquery\src\queue.js" />
+    <Content Include="Public\bower_components\jquery\src\queue\delay.js" />
+    <Content Include="Public\bower_components\jquery\src\selector-native.js" />
+    <Content Include="Public\bower_components\jquery\src\selector-sizzle.js" />
+    <Content Include="Public\bower_components\jquery\src\selector.js" />
+    <Content Include="Public\bower_components\jquery\src\serialize.js" />
+    <Content Include="Public\bower_components\jquery\src\traversing.js" />
+    <Content Include="Public\bower_components\jquery\src\traversing\findFilter.js" />
+    <Content Include="Public\bower_components\jquery\src\traversing\var\dir.js" />
+    <Content Include="Public\bower_components\jquery\src\traversing\var\rneedsContext.js" />
+    <Content Include="Public\bower_components\jquery\src\traversing\var\siblings.js" />
+    <Content Include="Public\bower_components\jquery\src\var\arr.js" />
+    <Content Include="Public\bower_components\jquery\src\var\class2type.js" />
+    <Content Include="Public\bower_components\jquery\src\var\concat.js" />
+    <Content Include="Public\bower_components\jquery\src\var\document.js" />
+    <Content Include="Public\bower_components\jquery\src\var\documentElement.js" />
+    <Content Include="Public\bower_components\jquery\src\var\fnToString.js" />
+    <Content Include="Public\bower_components\jquery\src\var\getProto.js" />
+    <Content Include="Public\bower_components\jquery\src\var\hasOwn.js" />
+    <Content Include="Public\bower_components\jquery\src\var\indexOf.js" />
+    <Content Include="Public\bower_components\jquery\src\var\ObjectFunctionString.js" />
+    <Content Include="Public\bower_components\jquery\src\var\pnum.js" />
+    <Content Include="Public\bower_components\jquery\src\var\push.js" />
+    <Content Include="Public\bower_components\jquery\src\var\rcssNum.js" />
+    <Content Include="Public\bower_components\jquery\src\var\rnothtmlwhite.js" />
+    <Content Include="Public\bower_components\jquery\src\var\slice.js" />
+    <Content Include="Public\bower_components\jquery\src\var\support.js" />
+    <Content Include="Public\bower_components\jquery\src\var\toString.js" />
+    <Content Include="Public\bower_components\jquery\src\wrap.js" />
+    <Content Include="Public\css\admin.css" />
+    <Content Include="Public\css\allcomplex.css" />
+    <Content Include="Public\css\allrecepts.css" />
+    <Content Include="Public\css\animate.min.css" />
+    <Content Include="Public\css\blank.html" />
+    <Content Include="Public\css\bootstrap.css" />
+    <Content Include="Public\css\bootstrap.min.css" />
+    <Content Include="Public\css\cizgi.css" />
+    <Content Include="Public\css\colors\main.css" />
+    <Content Include="Public\css\complex.css" />
+    <Content Include="Public\css\dr_profile.css" />
+    <Content Include="Public\css\eduComplexCss.css" />
+    <Content Include="Public\css\font-awesome.min.css" />
+    <Content Include="Public\css\food.css" />
+    <Content Include="Public\css\foodHut_responsive.css" />
+    <Content Include="Public\css\foodHut_style.css" />
+    <Content Include="Public\css\gymblog.css" />
+    <Content Include="Public\css\gymComplexCss.css" />
+    <Content Include="Public\css\healthblog.css" />
+    <Content Include="Public\css\idman.css" />
+    <Content Include="Public\css\idmanblog.css" />
+    <Content Include="Public\css\layerslider.css" />
+    <Content Include="Public\css\lightbox.min.css" />
+    <Content Include="Public\css\login.css" />
+    <Content Include="Public\css\magnific-popup.css" />
+    <Content Include="Public\css\materialize.css" />
+    <Content Include="Public\css\medicore.css" />
+    <Content Include="Public\css\mob.css" />
+    <Content Include="Public\css\name.css" />
+    <Content Include="Public\css\names.css" />
+    <Content Include="Public\css\owl.carousel.min.css" />
+    <Content Include="Public\css\pageloader.css" />
+    <Content Include="Public\css\prettyPhoto.css" />
+    <Content Include="Public\css\profilstyle.css" />
+    <Content Include="Public\css\recept.css" />
+    <Content Include="Public\css\register.css" />
+    <Content Include="Public\css\registerr.css" />
+    <Content Include="Public\css\responsive.css" />
+    <Content Include="Public\css\search.css" />
+    <Content Include="Public\css\settings.css" />
+    <Content Include="Public\css\shortcodes.css" />
+    <Content Include="Public\css\slick.css" />
+    <Content Include="Public\css\stylel.css" />
+    <Content Include="Public\css\tehsil.css" />
+    <Content Include="Public\css\tehsilblog.css" />
+    <Content Include="Public\css\themify-icons.css" />
+    <Content Include="Public\css\VideoPopUp.css" />
+    <Content Include="Public\favicon.ico" />
+    <Content Include="Public\fonts\fontawesome-webfont862f.svg" />
+    <Content Include="Public\fonts\glyphicons-halflings-regular-2.html" />
+    <Content Include="Public\fonts\glyphicons-halflings-regular-3.html" />
+    <Content Include="Public\fonts\glyphicons-halflings-regular-4.html" />
+    <Content Include="Public\fonts\glyphicons-halflings-regular.html" />
+    <Content Include="Public\fonts\glyphicons-halflings-regulard41d.html" />
+    <Content Include="Public\fonts\themify9f24.svg" />
+    <Content Include="Public\icon.png" />
+    <Content Include="Public\images\about.jpg" />
+    <Content Include="Public\images\aboutfood.png" />
+    <Content Include="Public\images\activity1.jpg" />
+    <Content Include="Public\images\activity2.jpg" />
+    <Content Include="Public\images\activity3.jpg" />
+    <Content Include="Public\images\activity4.jpg" />
+    <Content Include="Public\images\add1.jpg" />
+    <Content Include="Public\images\add2.jpg" />
+    <Content Include="Public\images\add_bg.png" />
+    <Content Include="Public\images\arrow.png" />
+    <Content Include="Public\images\audio-bg.png" />
+    <Content Include="Public\images\author-hexa-bg.png" />
+    <Content Include="Public\images\author.jpg" />
+    <Content Include="Public\images\babybg.jpg" />
+    <Content Include="Public\images\babylogin.jpg" />
+    <Content Include="Public\images\babyregistr.jpeg" />
+    <Content Include="Public\images\bgbaby.jpg" />
+    <Content Include="Public\images\blog_img1.jpg" />
+    <Content Include="Public\images\blog_img2.jpg" />
+    <Content Include="Public\images\blog_img3.jpg" />
+    <Content Include="Public\images\blog_img4.jpg" />
+    <Content Include="Public\images\blog_img5.jpg" />
+    <Content Include="Public\images\blog_img6.jpg" />
+    <Content Include="Public\images\blog_list1.jpg" />
+    <Content Include="Public\images\blog_list2.jpg" />
+    <Content Include="Public\images\blog_list3.jpg" />
+    <Content Include="Public\images\blue.jpg" />
+    <Content Include="Public\images\butterfly.png" />
+    <Content Include="Public\images\cartoon1.jpg" />
+    <Content Include="Public\images\cartoon10.jpg" />
+    <Content Include="Public\images\cartoon11.jpg" />
+    <Content Include="Public\images\cartoon12.jpg" />
+    <Content Include="Public\images\cartoon2.jpg" />
+    <Content Include="Public\images\cartoon3.jpg" />
+    <Content Include="Public\images\cartoon4.jpg" />
+    <Content Include="Public\images\cartoon5.jpg" />
+    <Content Include="Public\images\cartoon6.jpg" />
+    <Content Include="Public\images\cartoon7.jpg" />
+    <Content Include="Public\images\cartoon8.jpg" />
+    <Content Include="Public\images\cartoon9.jpg" />
+    <Content Include="Public\images\class1.jpg" />
+    <Content Include="Public\images\class2.jpg" />
+    <Content Include="Public\images\class3.jpg" />
+    <Content Include="Public\images\class4.jpg" />
+    <Content Include="Public\images\class5.jpg" />
+    <Content Include="Public\images\class6.jpg" />
+    <Content Include="Public\images\clever.jpg" />
+    <Content Include="Public\images\clever2.jpg" />
+    <Content Include="Public\images\clever3.jpg" />
+    <Content Include="Public\images\client-logo1.png" />
+    <Content Include="Public\images\client-logo2.png" />
+    <Content Include="Public\images\client-logo3.png" />
+    <Content Include="Public\images\client-logo4.png" />
+    <Content Include="Public\images\cloud-bg.png" />
+    <Content Include="Public\images\comment.jpg" />
+    <Content Include="Public\images\comment1.jpg" />
+    <Content Include="Public\images\comment2.jpg" />
+    <Content Include="Public\images\comment3.jpg" />
+    <Content Include="Public\images\contact_form_bg.png" />
+    <Content Include="Public\images\e.png" />
+    <Content Include="Public\images\e_herfi.png" />
+    <Content Include="Public\images\facebook.png" />
+    <Content Include="Public\images\flower.png" />
+    <Content Include="Public\images\flower_blue.png" />
+    <Content Include="Public\images\flower_green.png" />
+    <Content Include="Public\images\flower_lavender.png" />
+    <Content Include="Public\images\flower_mustard.png" />
+    <Content Include="Public\images\flower_pink.png" />
+    <Content Include="Public\images\flower_purple.png" />
+    <Content Include="Public\images\flower_red.png" />
+    <Content Include="Public\images\flower_steelblue.png" />
+    <Content Include="Public\images\flower_yellow.png" />
+    <Content Include="Public\images\food.png" />
+    <Content Include="Public\images\footer_arrow.png" />
+    <Content Include="Public\images\footer_bg.png" />
+    <Content Include="Public\images\footer_strip.jpg" />
+    <Content Include="Public\images\footer_top_bg.png" />
+    <Content Include="Public\images\founder.jpg" />
+    <Content Include="Public\images\girl.png" />
+    <Content Include="Public\images\go_to_top.png" />
+    <Content Include="Public\images\gplus.png" />
+    <Content Include="Public\images\gradient.jpg" />
+    <Content Include="Public\images\gradientbg.jpg" />
+    <Content Include="Public\images\grdnt.png" />
+    <Content Include="Public\images\green-meta-arrow.png" />
+    <Content Include="Public\images\green_sketch.png" />
+    <Content Include="Public\images\green_title_bg.png" />
+    <Content Include="Public\images\header_bg.png" />
+    <Content Include="Public\images\hero1.jpg" />
+    <Content Include="Public\images\hero2.jpg" />
+    <Content Include="Public\images\hexagon.png" />
+    <Content Include="Public\images\image1.jpg" />
+    <Content Include="Public\images\image10.jpg" />
+    <Content Include="Public\images\image2.jpg" />
+    <Content Include="Public\images\image3.jpg" />
+    <Content Include="Public\images\image4.jpg" />
+    <Content Include="Public\images\image5.jpg" />
+    <Content Include="Public\images\image6.jpg" />
+    <Content Include="Public\images\image7.jpg" />
+    <Content Include="Public\images\image8.jpg" />
+    <Content Include="Public\images\image9.jpg" />
+    <Content Include="Public\images\kids.mp4" />
+    <Content Include="Public\images\layerslider-gallery\a-trendy-kids.png" />
+    <Content Include="Public\images\layerslider-gallery\aplus.png" />
+    <Content Include="Public\images\layerslider-gallery\apple.png" />
+    <Content Include="Public\images\layerslider-gallery\awesome-gallery.png" />
+    <Content Include="Public\images\layerslider-gallery\b-bulb.png" />
+    <Content Include="Public\images\layerslider-gallery\b-cloud.png" />
+    <Content Include="Public\images\layerslider-gallery\b-comment.png" />
+    <Content Include="Public\images\layerslider-gallery\b-game.png" />
+    <Content Include="Public\images\layerslider-gallery\b-glass.png" />
+    <Content Include="Public\images\layerslider-gallery\b-swirl.png" />
+    <Content Include="Public\images\layerslider-gallery\b-tick.png" />
+    <Content Include="Public\images\layerslider-gallery\bg1.png" />
+    <Content Include="Public\images\layerslider-gallery\bg2.jpg" />
+    <Content Include="Public\images\layerslider-gallery\bg2.png" />
+    <Content Include="Public\images\layerslider-gallery\bg3.jpg" />
+    <Content Include="Public\images\layerslider-gallery\bg4.png" />
+    <Content Include="Public\images\layerslider-gallery\bg5.png" />
+    <Content Include="Public\images\layerslider-gallery\black-board.jpg" />
+    <Content Include="Public\images\layerslider-gallery\boom.png" />
+    <Content Include="Public\images\layerslider-gallery\boy1.png" />
+    <Content Include="Public\images\layerslider-gallery\boy2.png" />
+    <Content Include="Public\images\layerslider-gallery\boy3.png" />
+    <Content Include="Public\images\layerslider-gallery\bring.png" />
+    <Content Include="Public\images\layerslider-gallery\cap.png" />
+    <Content Include="Public\images\layerslider-gallery\chalk-effect.png" />
+    <Content Include="Public\images\layerslider-gallery\common-star.png" />
+    <Content Include="Public\images\layerslider-gallery\common-swirl.png" />
+    <Content Include="Public\images\layerslider-gallery\creative-design.png" />
+    <Content Include="Public\images\layerslider-gallery\cup-divider.png" />
+    <Content Include="Public\images\layerslider-gallery\fun.png" />
+    <Content Include="Public\images\layerslider-gallery\girl1.png" />
+    <Content Include="Public\images\layerslider-gallery\girl2.png" />
+    <Content Include="Public\images\layerslider-gallery\grass.png" />
+    <Content Include="Public\images\layerslider-gallery\life.png" />
+    <Content Include="Public\images\layerslider-gallery\mega-menu.png" />
+    <Content Include="Public\images\layerslider-gallery\parallax-bg.png" />
+    <Content Include="Public\images\layerslider-gallery\purchase-theme.png" />
+    <Content Include="Public\images\layerslider-gallery\school-kid.png" />
+    <Content Include="Public\images\layerslider-gallery\star-2.png" />
+    <Content Include="Public\images\layerslider-gallery\swirl-2.png" />
+    <Content Include="Public\images\layerslider-gallery\swirl-3.png" />
+    <Content Include="Public\images\layerslider-gallery\swirl-4.png" />
+    <Content Include="Public\images\layerslider-gallery\text-desc.png" />
+    <Content Include="Public\images\layerslider-gallery\two.png" />
+    <Content Include="Public\images\layerslider-gallery\welcome-text.png" />
+    <Content Include="Public\images\loginbaby.jpg" />
+    <Content Include="Public\images\loginbg.svg" />
+    <Content Include="Public\images\logo-dark.png" />
+    <Content Include="Public\images\logo-light.png" />
+    <Content Include="Public\images\logo.png" />
+    <Content Include="Public\images\logo1.png" />
+    <Content Include="Public\images\logo2.png" />
+    <Content Include="Public\images\mask.png" />
+    <Content Include="Public\images\megamenu-title_bg.png" />
+    <Content Include="Public\images\mega_menu_bg.png" />
+    <Content Include="Public\images\mega_menu_blog_img1.jpg" />
+    <Content Include="Public\images\mega_menu_blog_img2.jpg" />
+    <Content Include="Public\images\meta_arrow.png" />
+    <Content Include="Public\images\mickey.png" />
+    <Content Include="Public\images\mypics\alma.jpg" />
+    <Content Include="Public\images\mypics\ari.png" />
+    <Content Include="Public\images\mypics\atlar.jpg" />
+    <Content Include="Public\images\mypics\baby-boy.png" />
+    <Content Include="Public\images\mypics\baby-feet-pink.png" />
+    <Content Include="Public\images\mypics\baby-footprint-heart.png" />
+    <Content Include="Public\images\mypics\baby-fussabdruck-herz.png" />
+    <Content Include="Public\images\mypics\baby-girl.png" />
+    <Content Include="Public\images\mypics\baby.jpg" />
+    <Content Include="Public\images\mypics\baby1.jpg" />
+    <Content Include="Public\images\mypics\baby1.png" />
+    <Content Include="Public\images\mypics\baby2.jpg" />
+    <Content Include="Public\images\mypics\baby3.png" />
+    <Content Include="Public\images\mypics\baloon1.jpg" />
+    <Content Include="Public\images\mypics\baloon2.png" />
+    <Content Include="Public\images\mypics\bg2.png" />
+    <Content Include="Public\images\mypics\board.jpg" />
+    <Content Include="Public\images\mypics\boy-footprint.png" />
+    <Content Include="Public\images\mypics\boy.png" />
+    <Content Include="Public\images\mypics\boyf.png" />
+    <Content Include="Public\images\mypics\btrfly.png" />
+    <Content Include="Public\images\mypics\bubble1.png" />
+    <Content Include="Public\images\mypics\bubble2.png" />
+    <Content Include="Public\images\mypics\bubble3.png" />
+    <Content Include="Public\images\mypics\buble.png" />
+    <Content Include="Public\images\mypics\butterfly.jpg" />
+    <Content Include="Public\images\mypics\dc1.jpg" />
+    <Content Include="Public\images\mypics\dc2.jpg" />
+    <Content Include="Public\images\mypics\dc3.jpg" />
+    <Content Include="Public\images\mypics\dc4.jpg" />
+    <Content Include="Public\images\mypics\dc5.jpg" />
+    <Content Include="Public\images\mypics\dc6.jpg" />
+    <Content Include="Public\images\mypics\dots.jpg" />
+    <Content Include="Public\images\mypics\ideas.jpg" />
+    <Content Include="Public\images\mypics\logoKorpem.png" />
+    <Content Include="Public\images\mypics\mother-baby.jpg" />
+    <Content Include="Public\images\mypics\star.jpg" />
+    <Content Include="Public\images\mypics\toys.jpg" />
+    <Content Include="Public\images\parent.jpg" />
+    <Content Include="Public\images\pinterest.png" />
+    <Content Include="Public\images\portfolio-mask.png" />
+    <Content Include="Public\images\portfolio-slider-arrow-left.png" />
+    <Content Include="Public\images\portfolio-slider-arrow-right.png" />
+    <Content Include="Public\images\portfolio_detail1.jpg" />
+    <Content Include="Public\images\portfolio_detail2.jpg" />
+    <Content Include="Public\images\portfolio_detail3.jpg" />
+    <Content Include="Public\images\portfolio_detail4.jpg" />
+    <Content Include="Public\images\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="Public\images\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="Public\images\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="Public\images\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="Public\images\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="Public\images\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="Public\images\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="Public\images\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="Public\images\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="Public\images\prettyPhoto\default\default_thumb.png" />
+    <Content Include="Public\images\prettyPhoto\default\loader.gif" />
+    <Content Include="Public\images\prettyPhoto\default\sprite.png" />
+    <Content Include="Public\images\prettyPhoto\default\sprite_next.png" />
+    <Content Include="Public\images\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="Public\images\prettyPhoto\default\sprite_x.png" />
+    <Content Include="Public\images\prettyPhoto\default\sprite_y.png" />
+    <Content Include="Public\images\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="Public\images\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="Public\images\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="Public\images\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="Public\images\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="Public\images\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="Public\images\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="Public\images\prettyPhoto\facebook\loader.gif" />
+    <Content Include="Public\images\prettyPhoto\facebook\sprite.png" />
+    <Content Include="Public\images\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="Public\images\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="Public\images\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="Public\images\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="Public\images\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="Public\images\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="Public\images\prettyPhoto\light_square\sprite.png" />
+    <Content Include="Public\images\pricing-image1.jpg" />
+    <Content Include="Public\images\pricing-image2.jpg" />
+    <Content Include="Public\images\pricing-image3.jpg" />
+    <Content Include="Public\images\pricing-image4.jpg" />
+    <Content Include="Public\images\product1.jpg" />
+    <Content Include="Public\images\product2.jpg" />
+    <Content Include="Public\images\product3.jpg" />
+    <Content Include="Public\images\product4.jpg" />
+    <Content Include="Public\images\product5.jpg" />
+    <Content Include="Public\images\product6.jpg" />
+    <Content Include="Public\images\product7.jpg" />
+    <Content Include="Public\images\product8.jpg" />
+    <Content Include="Public\images\product9.jpg" />
+    <Content Include="Public\images\product_bg.png" />
+    <Content Include="Public\images\product_thumb1.jpg" />
+    <Content Include="Public\images\product_thumb2.jpg" />
+    <Content Include="Public\images\product_thumb3.jpg" />
+    <Content Include="Public\images\professor.jpg" />
+    <Content Include="Public\images\professor1.jpg" />
+    <Content Include="Public\images\professor1.png" />
+    <Content Include="Public\images\rating.png" />
+    <Content Include="Public\images\red_sketch.png" />
+    <Content Include="Public\images\rounded-bg-img.jpg" />
+    <Content Include="Public\images\service1.jpg" />
+    <Content Include="Public\images\service2.jpg" />
+    <Content Include="Public\images\service3.jpg" />
+    <Content Include="Public\images\service4.jpg" />
+    <Content Include="Public\images\services_banner.jpg" />
+    <Content Include="Public\images\slide3.jpg" />
+    <Content Include="Public\images\sponsor-carousel-arrows.png" />
+    <Content Include="Public\images\stars.jpg" />
+    <Content Include="Public\images\stat-img.jpg" />
+    <Content Include="Public\images\steelblue_sketch.png" />
+    <Content Include="Public\images\student1.jpg" />
+    <Content Include="Public\images\sub_menu_bg.jpg" />
+    <Content Include="Public\images\team1.jpg" />
+    <Content Include="Public\images\team2.jpg" />
+    <Content Include="Public\images\team3.jpg" />
+    <Content Include="Public\images\team4.jpg" />
+    <Content Include="Public\images\tweety.png" />
+    <Content Include="Public\images\twitter.png" />
+    <Content Include="Public\images\twitter_icon.png" />
+    <Content Include="Public\images\video-bg.jpg" />
+    <Content Include="Public\images\white_title_bg.png" />
+    <Content Include="Public\images\yellow_sketch.png" />
+    <Content Include="Public\img\arrow.png" />
+    <Content Include="Public\img\bgbaby.jpg" />
+    <Content Include="Public\img\br1.jpg" />
+    <Content Include="Public\img\br2.jpg" />
+    <Content Include="Public\img\br3.jpg" />
+    <Content Include="Public\img\br4.jpg" />
+    <Content Include="Public\img\br5.jpg" />
+    <Content Include="Public\img\br6.jpg" />
+    <Content Include="Public\img\butterfly.jpg" />
+    <Content Include="Public\img\circle.jpg" />
+    <Content Include="Public\img\cirkinordek.jpg" />
+    <Content Include="Public\img\cirtdan.jpg" />
+    <Content Include="Public\img\cirtdannn.jpg" />
+    <Content Include="Public\img\close.png" />
+    <Content Include="Public\img\cook.jpg" />
+    <Content Include="Public\img\dn1.jpg" />
+    <Content Include="Public\img\dr1.jpg" />
+    <Content Include="Public\img\drbaby1.jpg" />
+    <Content Include="Public\img\drbaby2.jpg" />
+    <Content Include="Public\img\drbaby3.jpg" />
+    <Content Include="Public\img\first.jpg" />
+    <Content Include="Public\img\icon\arrow.png" />
+    <Content Include="Public\img\icon\close.png" />
+    <Content Include="Public\img\icon\cursor-plus.png" />
+    <Content Include="Public\img\icon\loading.gif" />
+    <Content Include="Public\img\icon\next.png" />
+    <Content Include="Public\img\icon\prev.png" />
+    <Content Include="Public\img\kasha.jpg" />
+    <Content Include="Public\img\kidsbg.jpg" />
+    <Content Include="Public\img\masha.jpeg" />
+    <Content Include="Public\img\mashabear.jpg" />
+    <Content Include="Public\img\menu2.jpg" />
+    <Content Include="Public\img\menubg.jpg" />
+    <Content Include="Public\img\msha.jpg" />
+    <Content Include="Public\img\nh1.png" />
+    <Content Include="Public\img\parallax.jpg" />
+    <Content Include="Public\img\pepe.jpg" />
+    <Content Include="Public\img\pepe1.jpg" />
+    <Content Include="Public\img\pepe2.jpg" />
+    <Content Include="Public\img\pepe3.jpg" />
+    <Content Include="Public\img\pepeeee.jpg" />
+    <Content Include="Public\img\pooh.jpg" />
+    <Content Include="Public\img\prple.gif" />
+    <Content Include="Public\img\purple.png" />
+    <Content Include="Public\img\qogal.jpg" />
+    <Content Include="Public\img\qogal1.jpg" />
+    <Content Include="Public\img\qoqal.jpg" />
+    <Content Include="Public\img\second.jpg" />
+    <Content Include="Public\img\senem.jpg" />
+    <Content Include="Public\img\sicanpisik.jpg" />
+    <Content Include="Public\img\sirin1.jpg" />
+    <Content Include="Public\img\sirinler.jpg" />
+    <Content Include="Public\img\slide1.jpg" />
+    <Content Include="Public\img\slide2.jpg" />
+    <Content Include="Public\img\slide3.jpg" />
+    <Content Include="Public\img\srn.jpg" />
+    <Content Include="Public\img\srnler.jpg" />
+    <Content Include="Public\img\stars.jpg" />
+    <Content Include="Public\img\third.jpg" />
+    <Content Include="Public\img\toys.jpg" />
+    <Content Include="Public\img\turp.jpg" />
+    <Content Include="Public\img\turpbasliq.jpg" />
+    <Content Include="Public\img\turpnagili.jpg" />
+    <Content Include="Public\img\yildizlar.jpg" />
+    <Content Include="Public\js\admin.js" />
+    <Content Include="Public\js\bootstrap-toggle.min66f2.js" />
+    <Content Include="Public\js\bootstrap.min.js" />
+    <Content Include="Public\js\bootstrap.min66f2.js" />
+    <Content Include="Public\js\custom.js" />
+    <Content Include="Public\js\custom_gym.js" />
+    <Content Include="Public\js\custom_health.js" />
+    <Content Include="Public\js\dropzone.js" />
+    <Content Include="Public\js\food.js" />
+    <Content Include="Public\js\greensock.js" />
+    <Content Include="Public\js\imagesloaded66f2.js" />
+    <Content Include="Public\js\isotope.pkgd.min66f2.js" />
+    <Content Include="Public\js\jquery-2.2.2.min.js" />
+    <Content Include="Public\js\jquery-2.2.2_gym.min.js" />
+    <Content Include="Public\js\jquery-2.2.2_health.min.js" />
+    <Content Include="Public\js\jquery-3.2.1.min.js" />
+    <Content Include="Public\js\jquery-easing-1.3.js" />
+    <Content Include="Public\js\jquery-migrate.min.js" />
+    <Content Include="Public\js\jquery-transit-modified.js" />
+    <Content Include="Public\js\jquery-ui.min.js" />
+    <Content Include="Public\js\jquery.bxslider.min.js" />
+    <Content Include="Public\js\jquery.carouFredSel-6.2.0-packed.js" />
+    <Content Include="Public\js\jquery.countdown.min66f2.js" />
+    <Content Include="Public\js\jquery.counterup.min66f2.js" />
+    <Content Include="Public\js\jquery.countTo.js" />
+    <Content Include="Public\js\jquery.easing.min.js" />
+    <Content Include="Public\js\jquery.gmap.min.js" />
+    <Content Include="Public\js\jquery.inview.js" />
+    <Content Include="Public\js\jquery.isotope.min.js" />
+    <Content Include="Public\js\jquery.js" />
+    <Content Include="Public\js\jquery.magnific-popup.min.js" />
+    <Content Include="Public\js\jquery.magnific-popup_gym.min.js" />
+    <Content Include="Public\js\jquery.meanmenu.min.js" />
+    <Content Include="Public\js\jquery.min.js" />
+    <Content Include="Public\js\jquery.mixitup66f2.js" />
+    <Content Include="Public\js\jquery.nicescroll.min.js" />
+    <Content Include="Public\js\jquery.parallax-1.1.3.js" />
+    <Content Include="Public\js\jquery.prettyPhoto.js" />
+    <Content Include="Public\js\jquery.scrollUp.min66f2.js" />
+    <Content Include="Public\js\jquery.smartresize.js" />
+    <Content Include="Public\js\jquery.sticky.js" />
+    <Content Include="Public\js\jquery.tabs.min.js" />
+    <Content Include="Public\js\jquery.tipTip.minified.js" />
+    <Content Include="Public\js\jquery.validate.min.js" />
+    <Content Include="Public\js\jquery.viewport.js" />
+    <Content Include="Public\js\jQuerySimpleCounter.js" />
+    <Content Include="Public\js\jquery_gym.countTo.js" />
+    <Content Include="Public\js\jquery_gym.easing.min.js" />
+    <Content Include="Public\js\jquery_health.easing.min.js" />
+    <Content Include="Public\js\jsscripts\chosen.min.js" />
+    <Content Include="Public\js\jsscripts\counterup.min.js" />
+    <Content Include="Public\js\jsscripts\custom.js" />
+    <Content Include="Public\js\jsscripts\jpanelmenu.min.js" />
+    <Content Include="Public\js\jsscripts\jquery-2.2.0.min.js" />
+    <Content Include="Public\js\jsscripts\magnific-popup.min.js" />
+    <Content Include="Public\js\jsscripts\rangeslider.min.js" />
+    <Content Include="Public\js\jsscripts\slick.min.js" />
+    <Content Include="Public\js\jsscripts\tooltips.min.js" />
+    <Content Include="Public\js\layerslider.kreaturamedia.jquery.js" />
+    <Content Include="Public\js\layerslider.transitions.js" />
+    <Content Include="Public\js\materialize.min.js" />
+    <Content Include="Public\js\modernizr-2.6.2.min.js" />
+    <Content Include="Public\js\modernizr-custom.js" />
+    <Content Include="Public\js\owl.carousel.min66f2.js" />
+    <Content Include="Public\js\plugins66f2.js" />
+    <Content Include="Public\js\registermain.js" />
+    <Content Include="Public\js\search.js" />
+    <Content Include="Public\js\senem.js" />
+    <Content Include="Public\js\shortcodes.js" />
+    <Content Include="Public\js\simple.parallax.js" />
+    <Content Include="Public\js\simple_gym.parallax.js" />
+    <Content Include="Public\js\simple_health.parallax.js" />
+    <Content Include="Public\js\slick.min.js" />
+    <Content Include="Public\js\slick.min66f2.js" />
+    <Content Include="Public\js\slick_gym.min.js" />
+    <Content Include="Public\js\slick_health.min.js" />
+    <Content Include="Public\js\textilate\jquery.fittext66f2.js" />
+    <Content Include="Public\js\textilate\jquery.lettering66f2.js" />
+    <Content Include="Public\js\textilate\jquery.textillate66f2.js" />
+    <Content Include="Public\js\theme66f2.js" />
+    <Content Include="Public\js\twitter\jquery.tweet.min.js" />
+    <Content Include="Public\js\validation.js" />
+    <Content Include="Public\js\vendor\modernizr-2.8.3.min66f2.js" />
+    <Content Include="Public\js\venobox.min66f2.js" />
+    <Content Include="Public\js\VideoPopUp.jquery.js" />
+    <Content Include="Public\js\waypoints.min66f2.js" />
+    <Content Include="Public\js\wow.min66f2.js" />
+    <Content Include="Public\owlcarousel\owlCss\docs.theme.min.css" />
+    <Content Include="Public\owlcarousel\owlCss\owl.carousel.min.css" />
+    <Content Include="Public\owlcarousel\owlCss\owl.theme.default.min.css" />
+    <Content Include="Public\owlcarousel\owlJs\jquery.min.js" />
+    <Content Include="Public\owlcarousel\owlJs\owl.carousel.js" />
+    <Content Include="Public\plugins\iCheck\icheck.min.js" />
+    <Content Include="Public\school\404.html" />
+    <Content Include="Public\school\blog-detail-full-width.html" />
+    <Content Include="Public\school\blog-detail.html" />
+    <Content Include="Public\school\blog-full-width.html" />
+    <Content Include="Public\school\blog-list.html" />
+    <Content Include="Public\school\blog-with-sidebar.html" />
+    <Content Include="Public\school\cart.html" />
+    <Content Include="Public\school\contact.html" />
+    <Content Include="Public\school\courses.html" />
+    <Content Include="Public\school\css\animate.css" />
+    <Content Include="Public\school\css\color-1.css" />
+    <Content Include="Public\school\css\font-awesome.min.css" />
+    <Content Include="Public\school\css\fonts\glyphicons-halflings-regular-2.html" />
+    <Content Include="Public\school\css\fonts\glyphicons-halflings-regular-3.html" />
+    <Content Include="Public\school\css\fonts\glyphicons-halflings-regular-4.html" />
+    <Content Include="Public\school\css\fonts\glyphicons-halflings-regular-5.html" />
+    <Content Include="Public\school\css\fonts\glyphicons-halflings-regular.html" />
+    <Content Include="Public\school\css\fonts\glyphicons-halflings-regulard41d.html" />
+    <Content Include="Public\school\css\icomoon.css" />
+    <Content Include="Public\school\css\main.css" />
+    <Content Include="Public\school\css\owl.video.play.html" />
+    <Content Include="Public\school\css\responsive.css" />
+    <Content Include="Public\school\css\style.css" />
+    <Content Include="Public\school\css\transition.css" />
+    <Content Include="Public\school\css\vendor\bootstrap.css" />
+    <Content Include="Public\school\event-list.html" />
+    <Content Include="Public\school\event-thumb-view.html" />
+    <Content Include="Public\school\fonts\fontawesome-webfont93e3.svg" />
+    <Content Include="Public\school\fonts\icomoon4ca0.svg" />
+    <Content Include="Public\school\gallery-v1.html" />
+    <Content Include="Public\school\gallery-v2.html" />
+    <Content Include="Public\school\gallery-v3.html" />
+    <Content Include="Public\school\home-1.html" />
+    <Content Include="Public\school\home-2.html" />
+    <Content Include="Public\school\home-3.html" />
+    <Content Include="Public\school\home.html" />
+    <Content Include="Public\school\images\404-error.png" />
+    <Content Include="Public\school\images\about-gallery\img-01.jpg" />
+    <Content Include="Public\school\images\about-gallery\img-02.jpg" />
+    <Content Include="Public\school\images\about-gallery\img-03.jpg" />
+    <Content Include="Public\school\images\about-sec-img.png" />
+    <Content Include="Public\school\images\about-sec-img2.png" />
+    <Content Include="Public\school\images\admin-img\img-01.jpg" />
+    <Content Include="Public\school\images\admin-img\img-1-1.jpg" />
+    <Content Include="Public\school\images\admin-img\img-1-2.jpg" />
+    <Content Include="Public\school\images\admin-img\img-1-3.jpg" />
+    <Content Include="Public\school\images\admin-img\img-1-4.jpg" />
+    <Content Include="Public\school\images\aside-recent-post\img-01.jpg" />
+    <Content Include="Public\school\images\aside-recent-post\img-02.jpg" />
+    <Content Include="Public\school\images\aside-recent-post\img-03.jpg" />
+    <Content Include="Public\school\images\bages-collection\img-01.jpg" />
+    <Content Include="Public\school\images\bages-collection\img-02.jpg" />
+    <Content Include="Public\school\images\bages-collection\img-03.jpg" />
+    <Content Include="Public\school\images\bages-collection\img-04.jpg" />
+    <Content Include="Public\school\images\banner\img-01.jpg" />
+    <Content Include="Public\school\images\banner\img-02.jpg" />
+    <Content Include="Public\school\images\banner\img-03.jpg" />
+    <Content Include="Public\school\images\banner\img-04.jpg" />
+    <Content Include="Public\school\images\banner\img-05.jpg" />
+    <Content Include="Public\school\images\blog-full-width\img-01.jpg" />
+    <Content Include="Public\school\images\blog-full-width\img-02.jpg" />
+    <Content Include="Public\school\images\blog-full-width\img-03.jpg" />
+    <Content Include="Public\school\images\blog-full-width\img-04.jpg" />
+    <Content Include="Public\school\images\blog-list\img-03.jpg" />
+    <Content Include="Public\school\images\blog-with-sidebar\img-01.jpg" />
+    <Content Include="Public\school\images\blog-with-sidebar\img-02.jpg" />
+    <Content Include="Public\school\images\blog-with-sidebar\img-03.jpg" />
+    <Content Include="Public\school\images\blog-with-sidebar\img-04.jpg" />
+    <Content Include="Public\school\images\bolg-detail\img-01.jpg" />
+    <Content Include="Public\school\images\brand-icons\img-01.png" />
+    <Content Include="Public\school\images\brand-icons\img-02.png" />
+    <Content Include="Public\school\images\brand-icons\img-03.png" />
+    <Content Include="Public\school\images\brand-icons\img-04.png" />
+    <Content Include="Public\school\images\brand-icons\img-1-1.png" />
+    <Content Include="Public\school\images\brand-icons\img-1-2.png" />
+    <Content Include="Public\school\images\brand-icons\img-1-3.png" />
+    <Content Include="Public\school\images\brand-icons\img-1-4.png" />
+    <Content Include="Public\school\images\brand-icons\img-1-5.png" />
+    <Content Include="Public\school\images\brand-icons\img-1-6.png" />
+    <Content Include="Public\school\images\cardit-carts\img-01.jpg" />
+    <Content Include="Public\school\images\cardit-carts\img-02.jpg" />
+    <Content Include="Public\school\images\cardit-carts\img-03.jpg" />
+    <Content Include="Public\school\images\cardit-carts\img-04.jpg" />
+    <Content Include="Public\school\images\client-img\img-01.jpg" />
+    <Content Include="Public\school\images\close.png" />
+    <Content Include="Public\school\images\commenter-img\img-01.jpg" />
+    <Content Include="Public\school\images\comming-product-bg.jpg" />
+    <Content Include="Public\school\images\counter-bg-2.jpg" />
+    <Content Include="Public\school\images\counter-bg.jpg" />
+    <Content Include="Public\school\images\courses\img-01.jpg" />
+    <Content Include="Public\school\images\courses\img-02.jpg" />
+    <Content Include="Public\school\images\courses\img-03.jpg" />
+    <Content Include="Public\school\images\courses\img-04.jpg" />
+    <Content Include="Public\school\images\courses\img-05.jpg" />
+    <Content Include="Public\school\images\courses\img-06.jpg" />
+    <Content Include="Public\school\images\courses\img-1-1.jpg" />
+    <Content Include="Public\school\images\courses\img-1-2.jpg" />
+    <Content Include="Public\school\images\courses\img-1-3.jpg" />
+    <Content Include="Public\school\images\courses\img-1-4.jpg" />
+    <Content Include="Public\school\images\event-bg.jpg" />
+    <Content Include="Public\school\images\event-list\img-01.jpg" />
+    <Content Include="Public\school\images\event-list\img-02.jpg" />
+    <Content Include="Public\school\images\event-list\img-03.jpg" />
+    <Content Include="Public\school\images\event-list\img-04.jpg" />
+    <Content Include="Public\school\images\event-thumb-view\img-01.jpg" />
+    <Content Include="Public\school\images\event-thumb-view\img-02.jpg" />
+    <Content Include="Public\school\images\event-thumb-view\img-03.jpg" />
+    <Content Include="Public\school\images\event-thumb-view\img-04.jpg" />
+    <Content Include="Public\school\images\event-thumb-view\img-05.jpg" />
+    <Content Include="Public\school\images\event-thumb-view\img-06.jpg" />
+    <Content Include="Public\school\images\flicker-img\img-01.jpg" />
+    <Content Include="Public\school\images\flicker-img\img-02.jpg" />
+    <Content Include="Public\school\images\flicker-img\img-03.jpg" />
+    <Content Include="Public\school\images\flicker-img\img-04.jpg" />
+    <Content Include="Public\school\images\flicker-img\img-05.jpg" />
+    <Content Include="Public\school\images\flicker-img\img-06.jpg" />
+    <Content Include="Public\school\images\footer-bg.jpg" />
+    <Content Include="Public\school\images\gallery-v2\img-01.jpg" />
+    <Content Include="Public\school\images\gallery-v2\img-02.jpg" />
+    <Content Include="Public\school\images\gallery-v2\img-03.jpg" />
+    <Content Include="Public\school\images\gallery-v2\img-04.jpg" />
+    <Content Include="Public\school\images\gallery-v2\img-05.jpg" />
+    <Content Include="Public\school\images\gallery-v2\img-06.jpg" />
+    <Content Include="Public\school\images\gallery-v2\img-07.jpg" />
+    <Content Include="Public\school\images\gallery-v2\img-08.jpg" />
+    <Content Include="Public\school\images\gallery-v3\img-01.jpg" />
+    <Content Include="Public\school\images\gallery-v3\img-02.jpg" />
+    <Content Include="Public\school\images\gallery-v3\img-03.jpg" />
+    <Content Include="Public\school\images\gallery-v3\img-04.jpg" />
+    <Content Include="Public\school\images\gallery-v3\img-05.jpg" />
+    <Content Include="Public\school\images\gallery-v3\img-06.jpg" />
+    <Content Include="Public\school\images\gallery-v3\img-07.jpg" />
+    <Content Include="Public\school\images\gallery-v3\img-08.jpg" />
+    <Content Include="Public\school\images\gallery-v3\img-09.jpg" />
+    <Content Include="Public\school\images\gallery-v4\img-01.jpg" />
+    <Content Include="Public\school\images\gallery-v4\img-02.jpg" />
+    <Content Include="Public\school\images\gallery-v4\img-03.jpg" />
+    <Content Include="Public\school\images\gallery-v4\img-04.jpg" />
+    <Content Include="Public\school\images\gallery-v4\img-05.jpg" />
+    <Content Include="Public\school\images\gallery-v4\img-06.jpg" />
+    <Content Include="Public\school\images\gallery\img-01.jpg" />
+    <Content Include="Public\school\images\gallery\img-02.jpg" />
+    <Content Include="Public\school\images\gallery\img-03.jpg" />
+    <Content Include="Public\school\images\gallery\img-04.jpg" />
+    <Content Include="Public\school\images\gallery\img-05.jpg" />
+    <Content Include="Public\school\images\inner-banner.jpg" />
+    <Content Include="Public\school\images\inner-logos\logo-1.png" />
+    <Content Include="Public\school\images\instagram\img-01.jpg" />
+    <Content Include="Public\school\images\instagram\img-02.jpg" />
+    <Content Include="Public\school\images\instagram\img-03.jpg" />
+    <Content Include="Public\school\images\instagram\img-04.jpg" />
+    <Content Include="Public\school\images\instagram\img-05.jpg" />
+    <Content Include="Public\school\images\instagram\img-06.jpg" />
+    <Content Include="Public\school\images\instagram\img-07.jpg" />
+    <Content Include="Public\school\images\instagram\img-08.jpg" />
+    <Content Include="Public\school\images\left-girl.png" />
+    <Content Include="Public\school\images\logo.png" />
+    <Content Include="Public\school\images\mobile-img.png" />
+    <Content Include="Public\school\images\open.png" />
+    <Content Include="Public\school\images\other-products\img-01.jpg" />
+    <Content Include="Public\school\images\other-products\img-02.jpg" />
+    <Content Include="Public\school\images\other-products\img-03.jpg" />
+    <Content Include="Public\school\images\other-products\img-04.jpg" />
+    <Content Include="Public\school\images\our-blog\img-01.jpg" />
+    <Content Include="Public\school\images\our-blog\img-02.jpg" />
+    <Content Include="Public\school\images\our-blog\img-03.jpg" />
+    <Content Include="Public\school\images\our-blog\img-1-1.jpg" />
+    <Content Include="Public\school\images\our-blog\img-1-2.jpg" />
+    <Content Include="Public\school\images\our-blog\img-1-3.jpg" />
+    <Content Include="Public\school\images\our-blog\img-1-4.jpg" />
+    <Content Include="Public\school\images\our-patners-bg-2.jpg" />
+    <Content Include="Public\school\images\our-patners-bg.jpg" />
+    <Content Include="Public\school\images\our-products\img-01.jpg" />
+    <Content Include="Public\school\images\our-products\img-02.jpg" />
+    <Content Include="Public\school\images\our-products\img-03.jpg" />
+    <Content Include="Public\school\images\our-products\img-04.jpg" />
+    <Content Include="Public\school\images\prettyPhoto\dark_rounded\btnNext.html" />
+    <Content Include="Public\school\images\prettyPhoto\dark_rounded\btnPrevious.html" />
+    <Content Include="Public\school\images\prettyPhoto\dark_rounded\contentPattern.html" />
+    <Content Include="Public\school\images\prettyPhoto\dark_rounded\loader.html" />
+    <Content Include="Public\school\images\prettyPhoto\dark_rounded\sprite.html" />
+    <Content Include="Public\school\images\prettyPhoto\dark_square\btnNext.html" />
+    <Content Include="Public\school\images\prettyPhoto\dark_square\btnPrevious.html" />
+    <Content Include="Public\school\images\prettyPhoto\dark_square\loader.html" />
+    <Content Include="Public\school\images\prettyPhoto\dark_square\sprite.html" />
+    <Content Include="Public\school\images\prettyPhoto\default\default_thumb.png" />
+    <Content Include="Public\school\images\prettyPhoto\default\loader.gif" />
+    <Content Include="Public\school\images\prettyPhoto\default\sprite.png" />
+    <Content Include="Public\school\images\prettyPhoto\default\sprite_next.png" />
+    <Content Include="Public\school\images\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="Public\school\images\prettyPhoto\default\sprite_x.png" />
+    <Content Include="Public\school\images\prettyPhoto\default\sprite_y.png" />
+    <Content Include="Public\school\images\prettyPhoto\facebook\btnNext.html" />
+    <Content Include="Public\school\images\prettyPhoto\facebook\btnPrevious.html" />
+    <Content Include="Public\school\images\prettyPhoto\facebook\contentPatternBottom.html" />
+    <Content Include="Public\school\images\prettyPhoto\facebook\contentPatternLeft.html" />
+    <Content Include="Public\school\images\prettyPhoto\facebook\contentPatternRight.html" />
+    <Content Include="Public\school\images\prettyPhoto\facebook\contentPatternTop.html" />
+    <Content Include="Public\school\images\prettyPhoto\facebook\default_thumbnail.html" />
+    <Content Include="Public\school\images\prettyPhoto\facebook\loader.html" />
+    <Content Include="Public\school\images\prettyPhoto\facebook\sprite.html" />
+    <Content Include="Public\school\images\prettyPhoto\light_rounded\btnNext.html" />
+    <Content Include="Public\school\images\prettyPhoto\light_rounded\btnPrevious.html" />
+    <Content Include="Public\school\images\prettyPhoto\light_rounded\loader.html" />
+    <Content Include="Public\school\images\prettyPhoto\light_rounded\sprite.html" />
+    <Content Include="Public\school\images\prettyPhoto\light_square\btnNext.html" />
+    <Content Include="Public\school\images\prettyPhoto\light_square\btnPrevious.html" />
+    <Content Include="Public\school\images\prettyPhoto\light_square\sprite.html" />
+    <Content Include="Public\school\images\product-small-img.jpg" />
+    <Content Include="Public\school\images\service-bg\img-01.jpg" />
+    <Content Include="Public\school\images\services-bg.jpg" />
+    <Content Include="Public\school\images\services-layer.png" />
+    <Content Include="Public\school\images\single-blog\img-01.jpg" />
+    <Content Include="Public\school\images\spport-icons-1.png" />
+    <Content Include="Public\school\images\spport-icons-2.png" />
+    <Content Include="Public\school\images\spport-icons-3.png" />
+    <Content Include="Public\school\images\tab-content-img1.jpg" />
+    <Content Include="Public\school\images\tabs-bg.jpg" />
+    <Content Include="Public\school\images\tabs-nav-bg.jpg" />
+    <Content Include="Public\school\images\team-detail\profiler-bg.jpg" />
+    <Content Include="Public\school\images\team-detail\profiler-img.jpg" />
+    <Content Include="Public\school\images\team-img-v2\img-01.png" />
+    <Content Include="Public\school\images\teams\img-01.png" />
+    <Content Include="Public\school\images\teams\img-02.png" />
+    <Content Include="Public\school\images\teams\img-03.png" />
+    <Content Include="Public\school\images\teams\img-1-1.jpg" />
+    <Content Include="Public\school\images\teams\img-1-2.jpg" />
+    <Content Include="Public\school\images\teams\img-1-3.jpg" />
+    <Content Include="Public\school\images\testimonial-bg-1.jpg" />
+    <Content Include="Public\school\images\testimonial-bg-2.jpg" />
+    <Content Include="Public\school\images\thumbnail\big\img-01.jpg" />
+    <Content Include="Public\school\images\thumbnail\small\img-01.jpg" />
+    <Content Include="Public\school\images\tree-icon.png" />
+    <Content Include="Public\school\images\twitter-post-logos\img-01.jpg" />
+    <Content Include="Public\school\images\twitter-post-logos\img-02.jpg" />
+    <Content Include="Public\school\images\twitter-post-logos\img-03.jpg" />
+    <Content Include="Public\school\images\uniform-collection\img-01.jpg" />
+    <Content Include="Public\school\images\uniform-collection\img-02.jpg" />
+    <Content Include="Public\school\images\uniform-collection\img-03.jpg" />
+    <Content Include="Public\school\images\uniform-collection\img-04.jpg" />
+    <Content Include="Public\school\images\upcomming-events\img-01.jpg" />
+    <Content Include="Public\school\images\upcomming-events\img-02.jpg" />
+    <Content Include="Public\school\images\upcomming-events\img-03.jpg" />
+    <Content Include="Public\school\images\upcomming-events\img-04.jpg" />
+    <Content Include="Public\school\images\upcomming-events\img-1-1.jpg" />
+    <Content Include="Public\school\images\upcomming-events\img-1-2.jpg" />
+    <Content Include="Public\school\images\upcomming-events\img-1-3.jpg" />
+    <Content Include="Public\school\images\video-sec-bg-2.jpg" />
+    <Content Include="Public\school\images\video-sec-bg.jpg" />
+    <Content Include="Public\school\img\bootstrap-colorpicker\alpha-horizontal.html" />
+    <Content Include="Public\school\img\bootstrap-colorpicker\alpha.html" />
+    <Content Include="Public\school\img\bootstrap-colorpicker\hue-horizontal.html" />
+    <Content Include="Public\school\img\bootstrap-colorpicker\hue.html" />
+    <Content Include="Public\school\img\bootstrap-colorpicker\saturation.html" />
+    <Content Include="Public\school\index-2.html" />
+    <Content Include="Public\school\index.html" />
+    <Content Include="Public\school\js\appear.js" />
+    <Content Include="Public\school\js\bootstrap-select.js" />
+    <Content Include="Public\school\js\classie.js" />
+    <Content Include="Public\school\js\colorpicker.js" />
+    <Content Include="Public\school\js\contact-form.js" />
+    <Content Include="Public\school\js\countdown.js" />
+    <Content Include="Public\school\js\gmap3.min.js" />
+    <Content Include="Public\school\js\isotope.pkgd.js" />
+    <Content Include="Public\school\js\main.js" />
+    <Content Include="Public\school\js\nstslider.js" />
+    <Content Include="Public\school\js\odometer.js" />
+    <Content Include="Public\school\js\owl-carousel.js" />
+    <Content Include="Public\school\js\parallax.js" />
+    <Content Include="Public\school\js\prettyPhoto.js" />
+    <Content Include="Public\school\js\sticky.js" />
+    <Content Include="Public\school\js\tabulous.html" />
+    <Content Include="Public\school\js\vendors\modernizr.html" />
+    <Content Include="Public\school\js\vendor\bootstrap.js" />
+    <Content Include="Public\school\js\vendor\jquery.js" />
+    <Content Include="Public\school\js\wow-min.js" />
+    <Content Include="Public\school\shop-categories.html" />
+    <Content Include="Public\school\shop-detail.html" />
+    <Content Include="Public\school\shop.html" />
+    <Content Include="Public\school\team-detail.html" />
+    <Content Include="Public\style.css" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Public\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="Public\bootstrap\css\bootstrap-theme.min.css.map" />
+    <Content Include="Public\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Public\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Public\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Public\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Public\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Public\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Public\css\name.css.map" />
+    <Content Include="Public\css\search.css.map" />
+    <Content Include="Public\css\tehsil.css.map" />
+    <Content Include="Public\fonts\fontawesome-webfont862f.eot" />
+    <Content Include="Public\fonts\fontawesome-webfont862f.ttf" />
+    <Content Include="Public\fonts\fontawesome-webfont862f.woff" />
+    <Content Include="Public\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Public\fonts\themify9f24.eot" />
+    <Content Include="Public\fonts\themify9f24.ttf" />
+    <Content Include="Public\fonts\themify9f24.woff" />
+    <Content Include="Public\fonts\themifyd41d.eot" />
+    <Content Include="Public\images\layerslider-gallery\Thumbs.db" />
+    <Content Include="Public\images\mypics\boyf" />
+    <Content Include="Public\images\mypics\Thumbs.db" />
+    <Content Include="Public\images\Thumbs.db" />
+    <Content Include="Public\README.md" />
+    <Content Include="Public\sass\name.scss" />
+    <Content Include="Public\sass\search.scss" />
+    <Content Include="Public\sass\tehsil.scss" />
+    <Content Include="Public\school\fonts\fontawesome-webfont93e3.eot" />
+    <Content Include="Public\school\fonts\fontawesome-webfont93e3.ttf" />
+    <Content Include="Public\school\fonts\fontawesome-webfont93e3.woff" />
+    <Content Include="Public\school\fonts\fontawesome-webfont93e3.woff2" />
+    <Content Include="Public\school\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Public\school\fonts\icomoon4ca0.eot" />
+    <Content Include="Public\school\fonts\icomoon4ca0.ttf" />
+    <Content Include="Public\school\fonts\icomoon4ca0.woff" />
+    <EntityDeploy Include="Models\Models.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Models1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Models.edmx.diagram">
+      <DependentUpon>Models.edmx</DependentUpon>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admins\Views\admin\Index.cshtml" />
+    <Content Include="Areas\Admins\Views\blogsCrud\Create.cshtml" />
+    <Content Include="Areas\Admins\Views\blogsCrud\Delete.cshtml" />
+    <Content Include="Areas\Admins\Views\blogsCrud\Details.cshtml" />
+    <Content Include="Areas\Admins\Views\blogsCrud\Edit.cshtml" />
+    <Content Include="Areas\Admins\Views\blogsCrud\Index.cshtml" />
+    <Content Include="Areas\Admins\Views\blog_categoryCrud\Create.cshtml" />
+    <Content Include="Areas\Admins\Views\blog_categoryCrud\Delete.cshtml" />
+    <Content Include="Areas\Admins\Views\blog_categoryCrud\Details.cshtml" />
+    <Content Include="Areas\Admins\Views\blog_categoryCrud\Edit.cshtml" />
+    <Content Include="Areas\Admins\Views\blog_categoryCrud\Index.cshtml" />
+    <Content Include="Areas\Admins\Views\cartoonsCrud\Create.cshtml" />
+    <Content Include="Areas\Admins\Views\cartoonsCrud\Delete.cshtml" />
+    <Content Include="Areas\Admins\Views\cartoonsCrud\Details.cshtml" />
+    <Content Include="Areas\Admins\Views\cartoonsCrud\Edit.cshtml" />
+    <Content Include="Areas\Admins\Views\cartoonsCrud\Index.cshtml" />
+    <Content Include="Areas\Admins\Views\CrudLettrs\Create.cshtml" />
+    <Content Include="Areas\Admins\Views\CrudLettrs\Delete.cshtml" />
+    <Content Include="Areas\Admins\Views\CrudLettrs\Details.cshtml" />
+    <Content Include="Areas\Admins\Views\CrudLettrs\Edit.cshtml" />
+    <Content Include="Areas\Admins\Views\CrudLettrs\Index.cshtml" />
+    <Content Include="Areas\Admins\Views\CrudNames\Create.cshtml" />
+    <Content Include="Areas\Admins\Views\CrudNames\Delete.cshtml" />
+    <Content Include="Areas\Admins\Views\CrudNames\Details.cshtml" />
+    <Content Include="Areas\Admins\Views\CrudNames\Edit.cshtml" />
+    <Content Include="Areas\Admins\Views\CrudNames\Index.cshtml" />
+    <Content Include="Areas\Admins\Views\foodsCrud\Create.cshtml" />
+    <Content Include="Areas\Admins\Views\foodsCrud\Delete.cshtml" />
+    <Content Include="Areas\Admins\Views\foodsCrud\Details.cshtml" />
+    <Content Include="Areas\Admins\Views\foodsCrud\Edit.cshtml" />
+    <Content Include="Areas\Admins\Views\foodsCrud\Index.cshtml" />
+    <Content Include="Areas\Admins\Views\food_categoriesCrud\Create.cshtml" />
+    <Content Include="Areas\Admins\Views\food_categoriesCrud\Delete.cshtml" />
+    <Content Include="Areas\Admins\Views\food_categoriesCrud\Details.cshtml" />
+    <Content Include="Areas\Admins\Views\food_categoriesCrud\Edit.cshtml" />
+    <Content Include="Areas\Admins\Views\food_categoriesCrud\Index.cshtml" />
+    <Content Include="Areas\Admins\Views\gym_blog\Create.cshtml" />
+    <Content Include="Areas\Admins\Views\gym_blog\Delete.cshtml" />
+    <Content Include="Areas\Admins\Views\gym_blog\Details.cshtml" />
+    <Content Include="Areas\Admins\Views\gym_blog\Edit.cshtml" />
+    <Content Include="Areas\Admins\Views\gym_blog\Index.cshtml" />
+    <Content Include="Areas\Admins\Views\Health_Staff_Crud\Create.cshtml" />
+    <Content Include="Areas\Admins\Views\Health_Staff_Crud\Delete.cshtml" />
+    <Content Include="Areas\Admins\Views\Health_Staff_Crud\Details.cshtml" />
+    <Content Include="Areas\Admins\Views\Health_Staff_Crud\Edit.cshtml" />
+    <Content Include="Areas\Admins\Views\Health_Staff_Crud\Index.cshtml" />
+    <Content Include="Areas\Admins\Views\Shared\_adminlayout.cshtml" />
+    <Content Include="Areas\Admins\Views\web.config" />
+    <Content Include="Areas\Admins\Views\regions_Crud\Create.cshtml" />
+    <Content Include="Areas\Admins\Views\regions_Crud\Delete.cshtml" />
+    <Content Include="Areas\Admins\Views\regions_Crud\Details.cshtml" />
+    <Content Include="Areas\Admins\Views\regions_Crud\Edit.cshtml" />
+    <Content Include="Areas\Admins\Views\regions_Crud\Index.cshtml" />
+    <Content Include="Areas\Admins\Views\our_complex_Crud\Create.cshtml" />
+    <Content Include="Areas\Admins\Views\our_complex_Crud\Delete.cshtml" />
+    <Content Include="Areas\Admins\Views\our_complex_Crud\Details.cshtml" />
+    <Content Include="Areas\Admins\Views\our_complex_Crud\Edit.cshtml" />
+    <Content Include="Areas\Admins\Views\our_complex_Crud\Index.cshtml" />
+    <Content Include="Areas\Admins\Views\admin\Login.cshtml" />
+    <Content Include="Public\bower_components\jquery\.bower.json" />
+    <Content Include="Public\bower_components\jquery\bower.json" />
+    <Content Include="Public\bower_components\jquery\dist\jquery.min.map" />
+    <Content Include="Public\bower_components\jquery\dist\jquery.slim.min.map" />
+    <Content Include="Public\bower_components\jquery\external\sizzle\dist\sizzle.min.map" />
+    <Content Include="Public\bower_components\jquery\README.md" />
+    <Content Include="Public\bower_components\jquery\src\.eslintrc.json" />
+    <Content Include="Public\fonts\ALBOROTO.otf" />
+    <Content Include="Public\fonts\AlwaysRadio.ttf" />
+    <Content Include="Public\fonts\comic-unipro.ttf" />
+    <Content Include="Public\fonts\comic-unipro-bd.ttf" />
+    <Content Include="Public\fonts\FryPro.otf" />
+    <Content Include="Public\fonts\Cocomat Light.otf" />
+    <Content Include="Public\fonts\Cocomat Ultralight.otf" />
+    <None Include="Scripts\jquery-1.12.4.intellisense.js" />
+    <Content Include="Scripts\jquery-1.12.4.js" />
+    <Content Include="Scripts\jquery-1.12.4.min.js" />
+    <Content Include="Scripts\jquery-1.12.4.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Uploads\20177231942316145549_1211799138906412_1577592306_o.jpg" />
+    <Content Include="Uploads\2017724133011trainer1.jpg" />
+    <Content Include="Uploads\201772414159blog_img5.jpg" />
+    <Content Include="Uploads\2017724171257trainer1.jpg" />
+    <Content Include="Uploads\201772417135add_bg.png" />
+    <Content Include="Uploads\2017724172640activity4.jpg" />
+    <Content Include="Uploads\20177241752class6.jpg" />
+    <Content Include="Uploads\201772431546class1.jpg" />
+    <Content Include="Uploads\20177243172class2.jpg" />
+    <Content Include="Uploads\201772431743class3.jpg" />
+    <Content Include="Uploads\201772431840class4.jpg" />
+    <Content Include="Uploads\201772431938author-hexa-bg.png" />
+    <Content Include="Uploads\201772504021br6.jpg" />
+    <Content Include="Uploads\201772504223br6.jpg" />
+    <Content Include="Uploads\20177250422br6.jpg" />
+    <Content Include="Uploads\201772504235br6.jpg" />
+    <Content Include="Uploads\201772504248br6.jpg" />
+    <Content Include="Uploads\201772504259br6.jpg" />
+    <Content Include="Uploads\201772504424dn1.jpg" />
+    <Content Include="Uploads\201772504445dn1.jpg" />
+    <Content Include="Uploads\201772504520dn1.jpg" />
+    <Content Include="Uploads\20177250456dn1.jpg" />
+    <Content Include="Uploads\201772504719dn1.jpg" />
+    <Content Include="Uploads\20177250471dn1.jpg" />
+    <Content Include="Uploads\2017725142954trainer1.jpg" />
+    <Content Include="Uploads\2017725143322trainer2.jpg" />
+    <Content Include="Uploads\2017725143343trainer3.jpg" />
+    <Content Include="Uploads\201772514349trainer4.jpg" />
+    <Content Include="Uploads\2017725145848team1.jpg" />
+    <Content Include="Uploads\2017725145952team2.jpg" />
+    <Content Include="Uploads\201772515037team3.jpg" />
+    <Content Include="Uploads\201772515118team4.jpg" />
+    <Content Include="Uploads\20177251687mashabear.jpg" />
+    <Content Include="Uploads\201772522015br1.jpg" />
+    <Content Include="Uploads\201772522037br2.jpg" />
+    <Content Include="Uploads\201772522643br1.jpg" />
+    <Content Include="Uploads\201772522710br1.jpg" />
+    <Content Include="Uploads\201772522731br1.jpg" />
+    <Content Include="Uploads\201772522744br1.jpg" />
+    <Content Include="Uploads\20177252281br1.jpg" />
+    <Content Include="Uploads\201772523323dr1.jpg" />
+    <Content Include="Uploads\201772523334dr1.jpg" />
+    <Content Include="Uploads\201772523347dr1.jpg" />
+    <Content Include="Uploads\201772523359dr1.jpg" />
+    <Content Include="Uploads\20177252335dr1.jpg" />
+    <Content Include="Uploads\201772523410dr1.jpg" />
+    <Content Include="Uploads\201772605923image1.jpg" />
+    <Content Include="Uploads\201772611030image4.jpg" />
+    <Content Include="Uploads\201772611111image5.jpg" />
+    <Content Include="Uploads\20177261158image2.jpg" />
+    <Content Include="Uploads\2017726152028e.png" />
+    <Content Include="Uploads\2017726163040download.jpg" />
+    <Content Include="Uploads\2017726191516download.jpg" />
+    <Content Include="Uploads\20177261920181600x1000.png" />
+    <Content Include="Uploads\20177261948image3.jpg" />
+    <Content Include="Uploads\201772622133blog_img1.jpg" />
+    <Content Include="Uploads\201772622333class4.jpg" />
+    <Content Include="Uploads\201772622532activity3.jpg" />
+    <Content Include="Uploads\201772622552blog_img3.jpg" />
+    <Content Include="Uploads\201772625230image5.jpg" />
+    <Content Include="Uploads\20177262530image1.jpg" />
+    <Content Include="Uploads\201772625311image3.jpg" />
+    <Content Include="Uploads\201772625412portfolio_detail1.jpg" />
+    <Content Include="Uploads\2017729152638img-01.jpg" />
+    <Content Include="Uploads\2017729152652img-05.jpg" />
+    <Content Include="Uploads\2017729152659img-03.jpg" />
+    <Content Include="Uploads\201772915277img-04.jpg" />
+    <Content Include="Uploads\2017729154935img-02.jpg" />
+    <Content Include="Uploads\201772915506img-08.jpg" />
+    <Content Include="Uploads\20177292327252017729154935img-02.jpg" />
+    <Content Include="Uploads\2017729232832017729152652img-05.jpg" />
+    <Content Include="Uploads\20177292328342017729152659img-03.jpg" />
+    <Content Include="Uploads\2017730193626kasha.jpg" />
+    <Content Include="Uploads\2017730193726kasha.jpg" />
+    <Content Include="Uploads\2017730193821kasha.jpg" />
+    <Content Include="Uploads\2017730193853kasha.jpg" />
+    <Content Include="Uploads\201773113337br2.jpg" />
+    <Content Include="Uploads\201773115726alma.jpg" />
+    <Content Include="Uploads\201773115816board.jpg" />
+    <Content Include="Uploads\201773115848ideas.jpg" />
+    <Content Include="Uploads\20177311599ideas.jpg" />
+    <Content Include="Uploads\201773121010class2.jpg" />
+    <Content Include="Uploads\20177312111blog_img6.jpg" />
+    <Content Include="Uploads\201773121123blog_img3.jpg" />
+    <Content Include="Uploads\201773124525class1.jpg" />
+    <Content Include="Uploads\201773124823class2.jpg" />
+    <Content Include="Uploads\201773124850class3.jpg" />
+    <Content Include="Uploads\201773125024class4.jpg" />
+    <Content Include="Uploads\201773125056blog_img3.jpg" />
+    <Content Include="Uploads\201773125135class6.jpg" />
+    <Content Include="Uploads\201773133133video-bg.jpg" />
+    <Content Include="Uploads\20177313436video-bg.jpg" />
+    <Content Include="Uploads\20177313452video-bg.jpg" />
+    <Content Include="Uploads\2017731349video-bg.jpg" />
+    <Content Include="Uploads\20177313511video-bg.jpg" />
+    <Content Include="Uploads\2017811612142017725145848team1.jpg" />
+    <Content Include="Uploads\2017811618412017811612142017725145848team1.jpg" />
+    <Content Include="Uploads\2017811619572017811612142017725145848team1.jpg" />
+    <Content Include="Uploads\2017811622302017811619572017811612142017725145848team1.jpg" />
+    <Content Include="Uploads\2017811624282017725145848team1.jpg" />
+    <Content Include="Uploads\20178116272320177241752class6.jpg" />
+    <Content Include="Uploads\201781164447201772515037team3.jpg" />
+    <Content Include="Uploads\201781164629201772515118team4.jpg" />
+    <Content Include="Uploads\201781164748201772515037team3.jpg" />
+    <Content Include="Uploads\2017811655472017811612142017725145848team1.jpg" />
+    <Content Include="Uploads\201782224162017729154935img-02.jpg" />
+    <Content Include="Uploads\201782234482017729152638img-01.jpg" />
+    <Content Include="Uploads\201782235582017729152659img-03.jpg" />
+    <Content Include="Uploads\2017822365720177311599ideas.jpg" />
+    <Content Include="Uploads\20178223855201773115816board.jpg" />
+    <Content Include="Uploads\2017822389201773115726alma.jpg" />
+    <Content Include="Uploads\2017823233120177243172class2.jpg" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Cartoon\Index.cshtml" />
+    <Content Include="Views\cartoon_blog\Index.cshtml" />
+    <Content Include="Views\Education\Index.cshtml" />
+    <Content Include="Views\Food\Index.cshtml" />
+    <Content Include="Views\gym\index.cshtml" />
+    <Content Include="Views\health\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Letters\Index.cshtml" />
+    <Content Include="Views\Names\Name.cshtml" />
+    <Content Include="Views\SIngleBlog\Index.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\gym_blog\Index.cshtml" />
+    <Content Include="Views\gymblog\Index.cshtml" />
+    <Content Include="Views\Dr_Profile\Index.cshtml" />
+    <Content Include="Views\Complex\Index.cshtml" />
+    <Content Include="Uploads\Thumbs.db" />
+    <Content Include="Views\user\Index.cshtml" />
+    <Content Include="Views\user\Login.cshtml" />
+    <Content Include="Views\Recepts\Index.cshtml" />
+    <Content Include="Views\Liked\Index.cshtml" />
+    <Content Include="Views\Meqale\Index.cshtml" />
+    <Content Include="Views\user\Register.cshtml" />
+    <Content Include="Views\Shared\_UserProfileLayout.cshtml" />
+    <Content Include="Views\Complex\allComplex.cshtml" />
+    <Content Include="Views\Recepts\Allrecepts.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admins\Controllers\Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59178</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:59178/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
